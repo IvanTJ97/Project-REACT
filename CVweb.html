@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="keywords" content="CV">
+<meta name="description" content="CV de Ivan Tejedor">
+<meta name="author" content="IvanTJ">
+<meta name="copyright" content="IvanTJ">
+<meta name="robots" content="no index">
+<meta name="robots" content="no follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/dc3159c654.js" crossorigin="anonymous"></script>
+<title>CV Ivan Tejedor</title>
+<style>
+    *{
+        border:0;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Kumbh Sans',sans-serif;
+        scroll-behavior: smooth;
+        font-size: 14px;
+    }
+    .container{display: flex; flex-direction: column;}
+    .container>*{width: 100%;}
+    .bars{
+        background: rgb(224, 206, 206);
+        text-align: right;
+        padding: 5px;
+    }
+    .bars i{margin-right: 10px;}
+    .bars i:hover{cursor: pointer; color: #fff;}
+    .menuFloat,.menuDesk{display: none;}
+    .menuFloat li{text-align: center;}
+    a{
+        color: #000;
+        text-decoration: none;
+        display: block;
+        padding: 10px;
+    }
+    .menuFloat a:hover{color:#fff; background: rgb(108, 102, 108);}
+    .head{text-align: center; padding: 20px 0;}
+    aside div,main div{padding: 15px 15px 10px; text-align: justify;}
+    .cont li{margin:10px 0}
+    h2{margin-bottom:13px; display: inline-block;}
+    h6{margin-bottom:10px;}
+    ul{list-style: none;}
+    .form h3{margin-bottom: 10px;}
+    aside{padding: 0;}
+    footer a{color: #fff; padding: 5px;}
+    footer a:hover{background: rgb(92, 84, 84);}
+    .name h1{font-size: 26px;margin-top: 20px;}
+    .name h3{font-size: 18px;}
+    /*Estilo Boton UP INICIO*/
+    .iconup{
+        display: none;
+        position: fixed;
+        right: 50px;
+        bottom: 70px;
+        width: 50px;
+        height: 50px;
+        opacity: .7;
+    }
+    .iconup:hover{opacity: 1;}
+    /*Estilo Boton UP FINAL*/
+    /*Estilo caja Idioma INICIO*/
+    .caja{
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+    }
+    .langBox{width: 50%; padding: 15px 30px 10px 0;}
+    .semaforo{display: flex;padding: 5px 0;}
+    .semaforo div{width: 16.66%;padding: 5px 0;}
+    i{border-radius: 50%;}
+    .blue{background-color: #73b8ff;}
+    /*Estilo caja idioma FIN*/
+    /*Estilo caja Informatica INICIO*/
+    .box{padding: 0;}
+    .box div{padding: 0;}
+    .lim{width: 90%;}
+    .barra{height: 10px;}
+    .rellenos{background: #73b8ff; height: 10px;}
+    .r100{width: 100%;}
+    .r90{width: 90%;}
+    .r75{width: 75%;}
+    .r50{width: 50%;}
+    .r33{width: 33%;}
+    /*Estilo caja Informatica FIN*/
+    @media screen and (min-width: 965px){ 
+        *{font-size:initial;} 
+        .container{
+            display: grid;
+            grid-template-columns: repeat(5,1fr);
+            grid-template-rows: 275px 1fr 30px;
+        }
+        .bars{display: none;}
+        .menuDesk{display: block;}
+        .menuDesk ul{
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-around;
+        }
+        .menuDesk li{flex-grow: 1;text-align: center;}
+        .menuDesk a{color: #fff;}
+        .menuDesk a:hover{background-color: rgb(92, 84, 84);}
+        header,footer{grid-column: 1/6;background: #2e2e2e;color:#fff;}
+        aside{grid-column: 1/3;background: #ffa800;}
+        main{grid-column: 3/6;}
+        .head{display: flex;}
+        .foto{width: 35%;}
+        .name{width: 65%;}
+        .iconup{display: block;}
+        .caja{
+            padding: 0;
+            display: flex;
+            flex-flow: row wrap;
+        }
+        img{object-fit: cover;}
+        .name h1{font-size: 50px;margin-top: 20px;}
+        .name h3{font-size: 35px;}
+        h2{font-size: 30px;}
+        h3{font-size: 25px;margin-bottom: 10px;}
+    } 
+</style>
+</head>
+<body>
+    <div class="bars">
+        <i class="fa-solid fa-bars fa-lg"></i>
+        <nav class="menuFloat">
+            <ul>
+                <li><a href="#cont">Contacto</a></li>
+                <li><a href="#per">Perfil</a></li>
+                <li><a href="#infor">Informática</a></li>
+                <li><a href="#lang">Idiomas</a></li>
+                <li><a href="#data">Datos de Interés</a></li>
+                <li><a href="#exp">Experiencia Laboral</a></li>
+                <li><a href="#form">Formación Académica</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="container">
+        <header>
+            <nav class="menuDesk">
+                <ul>
+                    <li><a href="#cont">Contacto</a></li>
+                    <li><a href="#per">Perfil</a></li>
+                    <li><a href="#infor">Informática</a></li>
+                    <li><a href="#lang">Idiomas</a></li>
+                    <li><a href="#data">Datos de Interés</a></li>
+                    <li><a href="#exp">Experiencia Laboral</a></li>
+                    <li><a href="#form">Formación Académica</a></li>
+                </ul>
+            </nav>
+            <div class="head">
+                <div class="foto"><img src="perfil2.png" alt="Foto Perfil"></div>
+                <div class="name">
+                <h1>IVAN TEJEDOR FARRERAS</h1>
+                <h3>Programador / Administrativo</h3>
+                </div>
+            </div>
+        </header>
+        <aside>
+            <div class="cont" id="cont">
+                <h2>Contacto</h2>
+                <ul>
+                    <li><i class="fa-regular fa-envelope"></i>  ivan.tejfar@gmail.com</li>
+                    <li><i class="fa-solid fa-phone"></i>  610 218 409</li>
+                    <li><i class="fa-solid fa-house"></i>  Sant Adrià de Besòs (08930) Barcelona</li>
+                </ul>
+            </div>
+            <div class="per" id="per">
+                <h2>Perfil</h2>
+                <p>Persona joven, eficiente y polivalente con muchas ganas de mostrar mi valía como trabajador, poner en práctica todos los conocimientos que he adquirido durante los estudios, y con ganas de aprender cosas nuevas, poder desarrollarme como persona y mejorar día a día.</p>
+            </div>
+            <div class="comp" id="comp">
+                <h2>Comeptencias</h2>
+                <ul>
+                    <li>Responsabilidad</li>
+                    <li>Adaptabilidad</li>
+                    <li>Multi-Tasking</li>
+                    <li>Autonomía</li>
+                </ul>
+            </div>
+            <div class="infor" id="infor">
+                <h2>Informática</h2>
+                <div class="box">
+                    <div class="lim">
+                        <h4>Entorno Windows</h4>
+                        <div class="barra">
+                            <div class="rellenos r100"></div>
+                        </div>
+                        <h4>Microsoft Office</h4>
+                        <div class="barra">
+                            <div class="rellenos r100"></div>
+                        </div>
+                        <h4>HTML & CSS</h4>
+                        <div class="barra">
+                            <div class="rellenos r90"></div>
+                        </div>
+                        <h4>JavaScript</h4>
+                        <div class="barra">
+                            <div class="rellenos r75"></div>
+                        </div>
+                        <h4>React</h4>
+                        <div class="barra">
+                            <div class="rellenos r50"></div>
+                        </div>
+                        <h4>A3Con</h4>
+                        <div class="barra">
+                            <div class="rellenos r33"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="lang" id="lang">
+                <h2>Idiomas</h2>
+                <div class="caja">
+                    <div class="langBox">
+                        <h4>Castellano</h4>
+                        <div class="semaforo">
+                            <div><i class="fa-regular fa-circle blue"></i></div>
+                            <div><i class="fa-regular fa-circle blue"></i></div>
+                            <div><i class="fa-regular fa-circle blue"></i></div>
+                            <div><i class="fa-regular fa-circle blue"></i></div>
+                            <div><i class="fa-regular fa-circle blue"></i></div>
+                            <div><i class="fa-regular fa-circle blue"></i></div>
+                        </div>
+                    </div>
+                    <div class="langBox">
+                        <h4>Catalan</h4>
+                        <div class="semaforo">
+                            <div><i class="fa-regular fa-circle blue"></i></div>
+                            <div><i class="fa-regular fa-circle blue"></i></div>
+                            <div><i class="fa-regular fa-circle blue"></i></div>
+                            <div><i class="fa-regular fa-circle blue"></i></div>
+                            <div><i class="fa-regular fa-circle blue"></i></div>
+                            <div><i class="fa-regular fa-circle blue"></i></div>
+                        </div>
+                    </div>
+                    <div class="langBox">
+                        <h4>Ingles</h4>
+                        <div class="semaforo">
+                            <div><i class="fa-regular fa-circle blue"></i></div>
+                            <div><i class="fa-regular fa-circle blue"></i></div>
+                            <div><i class="fa-regular fa-circle blue"></i></div>
+                            <div><i class="fa-regular fa-circle blue"></i></div>
+                            <div><i class="fa-regular fa-circle"></i></div>
+                            <div><i class="fa-regular fa-circle"></i></div>
+                        </div>
+                    </div>
+                    <div class="langBox">
+                        <h4>Frances</h4>
+                        <div class="semaforo">
+                            <div><i class="fa-regular fa-circle blue"></i></div>
+                            <div><i class="fa-regular fa-circle blue"></i></div>
+                            <div><i class="fa-regular fa-circle"></i></div>
+                            <div><i class="fa-regular fa-circle"></i></div>
+                            <div><i class="fa-regular fa-circle"></i></div>
+                            <div><i class="fa-regular fa-circle"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="data" id="data">
+                <h2>Datos de interés</h2>
+                <ul>
+                    <li>Permiso de conducir B</li>
+                    <li>Disponibilidad total e inmediata</li>
+                </ul>
+            </div>
+        </aside>
+        <main>
+            <div class="exp" id="exp">
+                <h2>Experiencia Laboral</h2>
+                <div class="oliver">
+                    <h3>Oliver+Batlle</h3>
+                    <h5>Administrativo</h5>
+                    <h6>2020</h6>
+                    <p>Tareas realizadas:</p>
+                    <ul>
+                        <li>Revisión y expedición de la documentación derivada de las exportaciones e impotaciones (B/L, CMR,
+                            DUAs,...) e Intrastat</li>
+                        <li>Seguimiento y preparación de envíos tanto intracomunitarios como exportaciones internacionales</li>
+                        <li>Realización y punteo de facturas para clientes internacionales</li>
+                    </ul>
+                </div>
+                <div class="valmat">
+                    <h3>Valmat / Petit Indi</h3>
+                    <h5>Administrativo</h5>
+                    <h6>2018-2019</h6>
+                    <p>Tareas realizadas:</p>
+                    <ul>
+                        <li>Control de horarios de los trabajadores</li>
+                        <li>Cálculo de escandallos y costes de producción</li>
+                        <li>Facturación a clientes</li>
+                        <li>Preparación de envíos y control de stock</li>
+                        <li>Preparación y expedición de documentación necesaria para gestoría.</li>
+                        <li>Revisión de documentos oficiales (modelo 303, 115...)</li>
+                    </ul>
+                </div>
+                <div class="motor">
+                    <h3>Motor Repris</h3>
+                    <h5>Auxiliar Administrativo</h5>
+                    <h6>2017</h6>
+                    <p>Tareas realizadas:</p>
+                    <ul>
+                        <li>Archivo y punteo de facturas</li>
+                        <li>Recepción de clientes</li>
+                        <li>Contacto con clientes</li>
+                        <li>Control horario de trabajadores</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="form" id="form">
+                <h2>Formación Académica</h2>
+                <div class="pro">
+                    <h3>Curso de Formación Profesional de Programación de Aplicaciones Móviles (No Reglado) - 840h.</h3>
+                    <h5>Academia Aspasia, Barcelona</h5>
+                    <h6>2022</h6>
+                </div>
+                <div class="com">
+                    <h3>Título de Grado Superior en Comercio Internacional</h3>
+                    <h5>Institut Badalonès, Badalona</h5>
+                    <h6>2018-2020</h6>
+                </div>
+                <div class="adm">
+                    <h3>Título de Grado Superior en Administración y Finanzas</h3>
+                    <h5>Institut Badalonès, Badalona</h5>
+                    <h6>2017-2019</h6>
+                </div>
+                <div class="fis">
+                    <h3>Grado en Física (no finalizado)</h3>
+                    <h5>Universitat de Barcelona (UB)</h5>
+                    <h6>2015-2017</h6>
+                </div>
+                <div class="bach">
+                    <h3>Título de Bachillerato (rama Tecno-Científica)</h3>
+                    <h5>Instituto Sant Gabriel, Sant Adrià de Besòs</h5>
+                    <h6>2013-2015</h6>
+                </div>
+                <div class="eso">
+                    <h3>Título de la ESO</h3>
+                    <h5>Colegio Amor de Dios, Sant Adrià de Besòs</h5>
+                    <h6>2000-2013</h6>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <a href="#">IJ</a>
+        </footer>
+        <div class="iconup"><a href="#"><span class="color"><i class="fa-solid fa-circle-up fa-3x"></i></span></a></div>
+    </div>
+<script>
+    let p=0;
+    document.querySelector(".bars").addEventListener("click",()=>{
+        if(p==0){document.querySelector(".menuFloat").style.display="block";p++}
+        else if(p==1){ document.querySelector(".menuFloat").style.display="none";p--}
+    });
+    document.querySelector(".container").addEventListener("click",()=>{
+        if(p==1){document.querySelector(".menuFloat").style.display="none";p--}
+    });
+</script>
+</body>
+</html>

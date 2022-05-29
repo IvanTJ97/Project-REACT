@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .menu{
+            width:20%;
+            height:450px;
+            background:transparent;
+            margin-left:95%;
+            transition:2s;
+        }
+        .menu2{
+            margin-left:80%;
+            background:grey;
+        }
+        .boton{
+            width:75px;
+            height:75px;
+            background:grey;
+            transition:2s;
+            opacity: 1;
+        }
+        .boton2{
+            opacity: 0.1;
+        }
+        .boton img{
+            width:50px;
+            height:50px;
+            padding: 12.5px 12.5px 12.5px 12.5px;
+        }
+        ul{
+            list-style:none;
+            padding:0;
+            display: flex;
+            flex-direction: column;
+        }
+        li{
+            text-align: center;
+            border-bottom: 2px white solid;
+        }
+        a{
+            text-decoration:none;
+            color: white;
+            display: block;
+            padding: 25px 0 25px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="menu">
+        <div class="boton"><img src="https://cdn-icons-png.flaticon.com/128/37/37988.png"></div>
+        <ul>
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Perfil</a></li>
+            <li><a href="#">Actividades</a></li>
+            <li><a href="#">Contacto</a></li>
+        </ul>
+    </div>
+    <script>
+        document.querySelector(".boton").addEventListener("click",()=>{
+            document.querySelector(".menu").classList.toggle("menu2")
+            document.querySelector(".boton").classList.toggle("boton2")});
+        /*window.addEventListener("click",()=>{
+            if(document.querySelector(".menu").classList.contains("menu2")){
+                document.querySelector(".menu").classList.remove("menu2");
+                alert("AAAA");
+            }  
+        });*/
+    </script>
+</body>
+</html>

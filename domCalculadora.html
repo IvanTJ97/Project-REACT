@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #result{
+            width:400px;
+            margin-top: 25px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calculadora</h1>
+    <form>
+        <input type="number" name="numero1" id="numero1" placeholder="Número 1">
+        <select name="operador" id="operador">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+            <option value="^">^</option>
+        </select>
+        <input type="number" name="numero2" id="numero2" placeholder="Número 2">
+        <input type="button" id="btn" value="Calcular"><br>
+        <input name="result" id="result" placeholder="Resultado">
+    </form>
+    <script>
+        const suma=(a,b)=>(a+b);
+        const resta=(a,b)=>(a-b);
+        const mult=(a,b)=>(a*b);
+        const div=(a,b)=>(a/b);
+        const exp=(a,b)=>(Math.pow(a,b));
+        const calcular=()=>{
+            const a=parseInt(document.querySelector("#numero1").value);
+            const b=parseInt(document.querySelector("#numero2").value);
+            const c=document.querySelector("#operador").value;
+            switch(c){
+                case "+":
+                    document.querySelector("#result").value=suma(a,b);
+                break;
+                case "-":
+                    document.querySelector("#result").value=resta(a,b);
+                break;
+                case "*":
+                    document.querySelector("#result").value=mult(a, b);
+                break;
+                case "/":
+                    document.querySelector("#result").value=div(a, b);
+                break;
+                case "^":
+                    document.querySelector("#result").value=exp(a,b);
+                break;
+            }
+        }
+        document.querySelector("#btn").addEventListener("click",calcular);
+    </script>
+</body>
+</html>

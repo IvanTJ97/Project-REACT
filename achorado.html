@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let guiones="";guardado="";
+        const generarPalabra=()=>{
+            const palabras=["coche","avion","barco","bicicleta"];
+            let rand=Math.floor(Math.random()*(4));
+            let palSec=palabras[rand];
+            for(let i=0;i<palSec.length;i++){
+                guiones=guiones+"-"
+            }
+            guardado=guiones;
+            console.log(palSec);
+            return palSec
+        }
+        const adivinarPalabra=(input)=>{
+            let a=prompt("Introduce una letra");m=0;
+            guiones="";
+            for(let i=0;i<input.length;i++){
+                if(input.charAt(i)==a){guiones=guiones+a;m=1;}
+                else{guiones=guiones+guardado.charAt(i);}
+            }
+            if(m===1){alert("La letra se encuentra")}
+            else{alert("La letra no se encuentra")}
+            alert(guiones)
+            guardado=guiones;
+            console.log(guardado);
+        }
+        const juego=()=>{
+            let v=0;
+            const b=generarPalabra();
+            for(let i=0;i<b.length+3;i++){
+                adivinarPalabra(b);
+                if(guardado.indexOf("-")<0){v=1;break}
+            }
+            if (v===1){alert("Has ganado")}
+            else{alert("Has perdido")}
+        }
+        juego();
+    </script>
+</body>
+</html>

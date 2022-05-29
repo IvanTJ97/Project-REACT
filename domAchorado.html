@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    /*Ahorcado*/
+    .ahorcado{
+        width: 750px;
+        height: 500px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        margin:50px auto;
+        position: relative;
+    }
+    .ahorcado1,.ahorcado2,.ahorcado3,.ahorcado4{width: 25%;}
+    .ahorcado31{height: 25%;}
+    /*Moñeco*/
+    .cuerpo{
+        position: absolute;
+        width: 150px;
+        height: 300px;
+        top: 128px;
+        left: 485px;
+    }
+    .head{height: 25%;}
+    .cabeza{
+        border-radius: 50%;
+        width: 50%;
+        height: 100%;
+        margin: auto;
+    }
+    .tronco,.bottom{height: 37.5%;display: flex;flex-direction: row;position: relative;}
+    .izquierda{width: 50%;}
+    .derecha{
+        transform: rotate(45deg);
+        height: 125px;
+        width: 125px;
+        margin:33px 10px;
+        position: absolute;
+    }
+    .piernas{
+        transform: rotate(45deg);
+        height: 125px;
+        width: 125px;
+        margin:24px 10px;
+        position: absolute;
+    }
+    /*Consola interfaz*/
+    .juego{
+        display: flex;
+        flex-direction: row;
+        margin: auto;
+        text-align: center;
+    }
+    .palabra{font-size: x-large;width: 20%;}
+    .consola{width: 40%;}
+    .intentos{font-size: x-large;width: 40%;}
+    .fin,.ganado,.perdido{display: none;}
+</style>
+</head>
+<body> 
+    <div class="ahorcado">
+        <div class="ahorcado1"></div>
+        <div class="ahorcado2"></div>
+        <div class="ahorcado3">
+            <div class="ahorcado31"></div>
+        </div>
+        <div class="ahorcado4"></div>
+        <!--Moñeco-->
+        <div class="cuerpo">
+            <div class="head">
+                <div class="cabeza"></div>
+            </div>
+            <div class="tronco">
+                <div class="izquierda"></div>
+                <div class="derecha"></div>
+            </div>
+            <div class="bottom">
+                <div class="piernas"></div>
+            </div>
+        </div>
+    </div>
+    <!--Consola-->
+    <div class="juego">
+        <div class="palabra"></div>
+        <div class="consola">
+            <h2>Introduce una letra</h2>
+            <input type="text" name="Letra" id="letra" maxlength="1">
+            <input type="button" id="btn" value="Validar">
+        </div>
+        <div class="intentos"></div>
+    </div>
+    <div class="fin">
+        <div class="ganado"><h1>Has ganado!</h1></div>
+        <div class="perdido"><h1>Has perdido!</h1></div>
+    </div>
+<script>
+    //Primera parte, escogemos palabra y la pasamos a guiones
+    const palabras=["barco","bicicleta","socio","duque","mojito"];
+    const palsec=palabras[Math.floor(Math.random()*(palabras.length))];
+    let guiones="";palguar="";p=8;int=palsec.length+6;
+    for(let i=0;i<palsec.length;i++){guiones=guiones+"-"};
+    palguar=guiones;
+    console.log(palsec);
+    document.querySelector(".palabra").innerHTML="<h2>"+palguar+"</h2>";
+    document.querySelector(".intentos").innerHTML = "<h2>Te quedan "+int+ " intentos</h2>";
+    //Funcion a repetir
+    const mirarLetra=()=>{
+        guiones="";m=0;
+        const letra=document.querySelector("#letra").value;
+        document.querySelector("#letra").value="";
+        console.log(letra);
+        for(let i=0;i<palsec.length;i++){
+            if(palsec.charAt(i)==letra){guiones=guiones+letra;m=1}
+            else{guiones=guiones+palguar.charAt(i)}
+        }
+        if(m==0){p--;}
+        palguar=guiones;
+        int--;
+        ahorcado();
+        if(palguar.indexOf("-")<0){finPartida(1);int=1;};
+        if(int===0||p==0){finPartida()};
+        document.querySelector(".palabra").innerHTML="<h2>"+palguar+"</h2>";
+        document.querySelector(".intentos").innerHTML="<h2>Te quedan "+int+"intentos</h2>";
+    }
+    //Funcion dibujar ahorcado
+    const ahorcado=()=>{
+        if(p==7){
+            document.querySelector(".ahorcado1").style.borderBottom="5px solid black";
+            document.querySelector(".ahorcado2").style.borderBottom="5px solid black";}
+        else if(p==6){
+            document.querySelector(".ahorcado1").style.borderRight="5px solid black";}
+        else if(p==5){
+            document.querySelector(".ahorcado2").style.borderTop="5px solid black";
+            document.querySelector(".ahorcado3").style.borderTop="5px solid black";}
+        else if(p==4){
+            document.querySelector(".ahorcado31").style.borderRight="5px solid black";}
+        else if(p==3){
+            document.querySelector(".cabeza").style.border="5px solid black";}
+        else if(p==2){
+            document.querySelector(".izquierda").style.borderRight="5px solid black";}
+        else if(p==1){
+            document.querySelector(".derecha").style.borderTop="5px solid black";
+            document.querySelector(".derecha").style.borderLeft="5px solid black";}
+        else if(p==0){
+            document.querySelector(".piernas").style.borderTop="5px solid black";
+            document.querySelector(".piernas").style.borderLeft="5px solid black";}
+    }
+    //Funcion fin partida
+    const finPartida=(v=0)=>{
+        document.querySelector(".juego").style.display = "none";
+        document.querySelector(".fin").style.display = "block";
+        (v==0)?document.querySelector(".perdido").style.display = "block": 
+        document.querySelector(".ganado").style.display="block"
+    }
+    //Click
+    document.querySelector("#btn").addEventListener("click",mirarLetra);
+    document.querySelector("#letra").addEventListener("keypress",(event) =>{
+        if(event.keyCode===13){
+            event.preventDefault();
+            mirarLetra();}
+    });
+</script>
+</body>
+</html>

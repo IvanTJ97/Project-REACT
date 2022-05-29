@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans&display=swap" rel="stylesheet">
+<title>Document</title>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Kumbh Sans',sans-serif;
+        font-size: 35px;
+    }
+    .container{
+        display:flex;
+        justify-content: space-around;
+    }
+    .tablero,.teclado{
+        display: grid;
+        gap:10px;
+        width: 40%;
+        margin-left: 10px;
+        grid-template-columns: repeat(5,1fr);
+        grid-template-rows: repeat(6,100px);
+    }
+    .tablero div,.teclado div:not(.blanco){
+        border: 1px solid #000;
+        display: grid;
+        place-items: center;
+    }
+    .teclado div:hover:not(.blanco){
+        cursor: pointer;
+        background: #ccc;
+    }
+    input{
+        width: 100%;
+        border: 0;
+        text-align: center;
+        height: 100%;
+    }
+</style>
+</head>
+<body>
+    <div class="container">
+        <div class="tablero">
+            <div class="letter"><input type="text" id="A1" class="A"></div>
+            <div class="letter"><input type="text" id="A2" class="A"></div>
+            <div class="letter"><input type="text" id="A3" class="A"></div>
+            <div class="letter"><input type="text" id="A4" class="A"></div>
+            <div class="letter"><input type="text" id="A5" class="A"></div>
+            <div class="letter"><input type="text" id="B1" class="B"></div>
+            <div class="letter"><input type="text" id="B2" class="B"></div>
+            <div class="letter"><input type="text" id="B3" class="B"></div>
+            <div class="letter"><input type="text" id="B4" class="B"></div>
+            <div class="letter"><input type="text" id="B5" class="B"></div>
+            <div class="letter"><input type="text" id="C1" class="C"></div>
+            <div class="letter"><input type="text" id="C2" class="C"></div>
+            <div class="letter"><input type="text" id="C3" class="C"></div>
+            <div class="letter"><input type="text" id="C4" class="C"></div>
+            <div class="letter"><input type="text" id="C5" class="C"></div>
+            <div class="letter"><input type="text" id="D1" class="D"></div>
+            <div class="letter"><input type="text" id="D2" class="D"></div>
+            <div class="letter"><input type="text" id="D3" class="D"></div>
+            <div class="letter"><input type="text" id="D4" class="D"></div>
+            <div class="letter"><input type="text" id="D5" class="D"></div>
+            <div class="letter"><input type="text" id="E1" class="E"></div>
+            <div class="letter"><input type="text" id="E2" class="E"></div>
+            <div class="letter"><input type="text" id="E3" class="E"></div>
+            <div class="letter"><input type="text" id="E4" class="E"></div>
+            <div class="letter"><input type="text" id="E5" class="E"></div>
+            <div class="letter"><input type="text" id="F1" class="F"></div>
+            <div class="letter"><input type="text" id="F2" class="F"></div>
+            <div class="letter"><input type="text" id="F3" class="F"></div>
+            <div class="letter"><input type="text" id="F4" class="F"></div>
+            <div class="letter"><input type="text" id="F5" class="F"></div>
+        </div>
+        <div class="teclado">
+            <div class="letrab">Q</div>
+            <div class="letrab">W</div>
+            <div class="letrab">E</div>
+            <div class="letrab">R</div>
+            <div class="letrab">T</div>
+            <div class="letrab">Y</div>
+            <div class="letrab">U</div>
+            <div class="letrab">I</div>
+            <div class="letrab">O</div>
+            <div class="letrab">P</div>
+            <div class="letrab">A</div>
+            <div class="letrab">S</div>
+            <div class="letrab">D</div>
+            <div class="letrab">F</div>
+            <div class="letrab">G</div>
+            <div class="letrab">H</div>
+            <div class="letrab">J</div>
+            <div class="letrab">K</div>
+            <div class="letrab">L</div>
+            <div class="letrab">Ñ</div>
+            <div class="letrab">Z</div>
+            <div class="letrab">X</div>
+            <div class="letrab">C</div>
+            <div class="letrab">V</div>
+            <div class="letrab">B</div>
+            <div class="letrab">N</div>
+            <div class="letrab">M</div>
+            <div class="blanco"></div>
+            <div class="borrar">Borrar</div>
+            <div class="enter">Enter</div>
+        </div>
+    </div>
+<script>
+    let columna=1;fila=0;i=0;Arr=[];
+    const FILAS=["A","B","C","D","E","F"];
+    const PALABRA=["M","A","R","E","M"];
+    const funcion=()=>{
+        document.querySelectorAll("."+FILAS[fila]).forEach(obj=>{
+            obj.style.background="#f00";
+            if(obj.value==PALABRA[i]){obj.style.background="#0f0";Arr.push(obj.value);}
+            else if(PALABRA.indexOf(obj.value)>-1){
+                Arr.push(obj.value);
+                let s=Arr.filter(x=>x==obj.value).length;
+                let r=PALABRA.filter(x=>x==obj.value).length;
+                if(s==1||s<=r){obj.style.background="#ff0";}
+            }
+            i++;
+        });
+        columna=1;fila++;i=0;Arr=[];
+    };
+       document.querySelectorAll(".letrab").forEach(obj=>obj.addEventListener("click",()=>{
+            if((columna-1)==0||(columna-1)%5!=0){document.querySelector("#"+FILAS[fila]+columna).value=obj.textContent;columna++;}
+       }));
+       document.querySelector(".borrar").addEventListener("click",()=>{
+            (columna==1)?columna=columna:columna--;
+            document.querySelector("#"+FILAS[fila]+columna).value="";
+       });
+       document.querySelector(".enter").addEventListener("click",()=>{
+           (columna==6)?funcion():alert("NO");
+           
+       });
+</script>
+</body>
+</html>

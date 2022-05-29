@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Las constantes y variables goblales van aquí:
+        let tablero=["_", "_", "_", "_", "_", "_", "_", "_", "_"];
+        let x="X";o="O";v1=0;v2=0;p=0;
+        //Las funciones serán: mostrarTablero(), marcarJugada(), ganar() y juego();
+        const mostrarTablero=()=>{
+            alert(tablero[0]+"|"+tablero[1]+"|"+tablero[2]+"\n"+tablero[3]+"|"+tablero[4]+"|"+tablero[5]+"\n"+tablero[6]+"|"+tablero[7]+"|"+tablero[8]);
+        }
+        const marcarJugada=(jugador)=>{
+            let continuar=true;
+            if(jugador=="Jugador1"){alert("Turno del jugador 1")}
+            else if(jugador=="Jugador2"){alert("Turno del jugador 2")}
+            while(continuar){
+                let f=prompt("Introduce el número de fila");
+                let c=prompt("Introduce el número de columna");
+                if(f==1){
+                    if(c==1){
+                        if(tablero[0]=="_"){
+                            if(jugador=="Jugador1"){tablero[0]=x;continuar=false}
+                            else if(jugador=="Jugador2"){tablero[0]=o;continuar=false}
+                        }
+                        else{alert("La casilla está ocupada, escoge una que no esté ocupada")}
+                    }
+                    else if(c==2){
+                        if(tablero[1]=="_"){
+                            if(jugador=="Jugador1"){tablero[1]=x;continuar=false}
+                            else if(jugador=="Jugador2"){tablero[1]=o;continuar=false}
+                        }
+                        else{alert("La casilla está ocupada, escoge una que no esté ocupada")}
+                    }
+                    else if(c==3){
+                        if(tablero[2]=="_"){
+                            if(jugador=="Jugador1"){tablero[2]=x;continuar=false}
+                            else if(jugador=="Jugador2"){tablero[2]=o;continuar=false}
+                        }
+                        else{alert("La casilla está ocupada, escoge una que no esté ocupada")}
+                    }
+                    else{alert("El número de columna introducido no es correcton introduce un valor entre el 1 y el 3")}
+                }
+                else if(f==2){
+                    if(c==1){
+                        if(tablero[3]=="_"){
+                            if(jugador=="Jugador1"){tablero[3]=x;continuar=false}
+                            else if(jugador=="Jugador2"){tablero[3]=o;continuar=false}
+                        }
+                        else{alert("La casilla está ocupada, escoge una que no esté ocupada")}
+                    }
+                    else if(c==2){
+                        if(tablero[4]=="_"){
+                            if(jugador=="Jugador1"){tablero[4]=x;continuar=false}
+                            else if(jugador=="Jugador2"){tablero[4]=o;continuar=false}
+                        }
+                        else{alert("La casilla está ocupada, escoge una que no esté ocupada")}
+                    }
+                    else if(c==3){
+                        if(tablero[5]=="_"){
+                            if(jugador=="Jugador1"){tablero[5]=x;continuar=false}
+                            else if(jugador=="Jugador2"){tablero[5]=o;continuar=false}
+                        }
+                        else{alert("La casilla está ocupada, escoge una que no esté ocupada")}
+                    }
+                    else{alert("El número de columna introducido no es correcton introduce un valor entre el 1 y el 3")}
+                }
+                else if(f==3){
+                    if(c==1){
+                        if(tablero[6]=="_"){
+                            if(jugador=="Jugador1"){tablero[6]=x;continuar=false}
+                            else if(jugador=="Jugador2"){tablero[6]=o;continuar=false}
+                        }
+                        else{alert("La casilla está ocupada, escoge una que no esté ocupada")}
+                    }
+                    else if(c==2){
+                        if(tablero[7]=="_"){
+                            if(jugador=="Jugador1"){tablero[7]=x;continuar=false}
+                            else if(jugador=="Jugador2"){tablero[7]=o;continuar=false}
+                        }
+                        else{alert("La casilla está ocupada, escoge una que no esté ocupada")}
+                    }
+                    else if(c==3){
+                        if(tablero[8]=="_"){
+                            if(jugador=="Jugador1"){tablero[8]=x;continuar=false}
+                            else if(jugador=="Jugador2"){tablero[8]=o;continuar=false}
+                        }
+                        else{alert("La casilla está ocupada, escoge una que no esté ocupada")}
+                    }
+                    else{alert("El número de columna introducido no es correcton introduce un valor entre el 1 y el 3")}
+                }
+                else{alert("El número de fila no es correcto, introduce un valor entre el 1 y el 3")}
+            }
+            p++;
+        }
+        const CPU=()=>{
+            alert("Turno de la CPU");
+            if(tablero[0]==tablero[1]&&tablero[0]!=="_"&&tablero[2=="_"]){tablero[2]=o}
+            else if(tablero[0]==tablero[3]&&tablero[0]!=="_"&&tablero[6]=="_"){tablero[6]=o}
+            else if(tablero[0]==tablero[4]&&tablero[0]!=="_"&&tablero[8]=="_"){tablero[8]=o}
+            else if(tablero[1]==tablero[2]&&tablero[1]!=="_"&&tablero[0]=="_"){tablero[0]=o}
+            else if(tablero[1]==tablero[4]&&tablero[1]!=="_"&&tablero[7]=="_"){tablero[7]=o}
+            else if(tablero[2]==tablero[0]&&tablero[2]!=="_"&&tablero[1]=="_"){tablero[1]=o}
+            else if(tablero[2]==tablero[5]&&tablero[2]!=="_"&&tablero[8]=="_"){tablero[8]=o}
+            else if(tablero[2]==tablero[4]&&tablero[2]!=="_"&&tablero[6]=="_"){tablero[6]=o}
+            else if(tablero[3]==tablero[4]&&tablero[3]!=="_"&&tablero[5]=="_"){tablero[5]=o}
+            else if(tablero[3]==tablero[6]&&tablero[3]!=="_"&&tablero[0]=="_"){tablero[0]=o}
+            else if(tablero[4]==tablero[5]&&tablero[4]!=="_"&&tablero[3]=="_"){tablero[3]=o}
+            else if(tablero[4]==tablero[7]&&tablero[4]!=="_"&&tablero[1]=="_"){tablero[1]=o}
+            else if(tablero[4]==tablero[6]&&tablero[4]!=="_"&&tablero[2]=="_"){tablero[2]=o}
+            else if(tablero[4]==tablero[8]&&tablero[4]!=="_"&&tablero[0]=="_"){tablero[0]=o}
+            else if(tablero[5]==tablero[3]&&tablero[5]!=="_"&&tablero[4]=="_"){tablero[4]=o}
+            else if(tablero[5]==tablero[8]&&tablero[5]!=="_"&&tablero[2]=="_"){tablero[2]=o}
+            else if(tablero[6]==tablero[0]&&tablero[6]!=="_"&&tablero[3]=="_"){tablero[3]=o}
+            else if(tablero[6]==tablero[7]&&tablero[6]!=="_"&&tablero[8]=="_"){tablero[8]=o}
+            else if(tablero[6]==tablero[2]&&tablero[6]!=="_"&&tablero[4]=="_"){tablero[4]=o}
+            else if(tablero[7]==tablero[8]&&tablero[7]!=="_"&&tablero[6]=="_"){tablero[6]=o}
+            else if(tablero[7]==tablero[1]&&tablero[7]!=="_"&&tablero[4]=="_"){tablero[4]=o}
+            else if(tablero[8]==tablero[6]&&tablero[8]!=="_"&&tablero[7]=="_"){tablero[7]=o}
+            else if(tablero[8]==tablero[2]&&tablero[8]!=="_"&&tablero[5]=="_"){tablero[5]=o}
+            else if(tablero[8]==tablero[0]&&tablero[8]!=="_"&&tablero[4]=="_"){tablero[4]=o}
+            else if(tablero[4]=="_"){tablero[4]=o}
+            else if(tablero[0]=="_"){tablero[0]=o}
+            else if(tablero[2]=="_"){tablero[2]=o}
+            else if(tablero[6]=="_"){tablero[6]=o}
+            else if(tablero[8]=="_"){tablero[8]=o}
+            else if(tablero[1]=="_"){tablero[1]=o}
+            else if(tablero[3]=="_"){tablero[3]=o}
+            else if(tablero[5]=="_"){tablero[5]=o}
+            else if(tablero[7]=="_"){tablero[0]=o}
+            else{alert("AAAAAA")}
+            p++;
+        }
+        const ganar=()=>{
+            //Jugador 1
+            if(tablero[0]==x&&tablero[1]==x&&tablero[2]==x){v1=1}
+            else if(tablero[3]==x&&tablero[4]==x&&tablero[5]==x){v1=1}
+            else if(tablero[6]==x&&tablero[7]==x&&tablero[8]==x){v1=1}
+            else if(tablero[0]==x&&tablero[3]==x&&tablero[6]==x){v1=1}
+            else if(tablero[1]==x&&tablero[4]==x&&tablero[7]==x){v1=1}
+            else if(tablero[2]==x&&tablero[5]==x&&tablero[8]==x){v1=1}
+            else if(tablero[0]==x&&tablero[4]==x&&tablero[8]==x){v1=1}
+            else if(tablero[2]==x&&tablero[4]==x&&tablero[6]==x){v1=1}
+            //Jugador 2
+            else if(tablero[0]==o&&tablero[1]==o&&tablero[2]==o){v2=1}
+            else if(tablero[3]==o&&tablero[4]==o&&tablero[5]==o){v2=1}
+            else if(tablero[6]==o&&tablero[7]==o&&tablero[8]==o){v2=1}
+            else if(tablero[0]==o&&tablero[3]==o&&tablero[6]==o){v2=1}
+            else if(tablero[1]==o&&tablero[4]==o&&tablero[7]==o){v2=1}
+            else if(tablero[2]==o&&tablero[5]==o&&tablero[8]==o){v2=1}
+            else if(tablero[0]==o&&tablero[4]==o&&tablero[8]==o){v2=1}
+            else if(tablero[2]==o&&tablero[4]==o&&tablero[6]==o){v2=1}
+        }
+        const juego=()=>{
+            alert("Bienvenido al 3 en raya");
+            /*let avanza=true;
+            while(modes){
+                let modo=prompt("Quieres jugar 1 vs. 1 o contra la CPU?(vs/CPU)");
+                if(modo=="vs"){avanza=false;}
+                else if(modo.toLowerCase()=="cpu"){modo=modo.toLowerCase();avanza=false;}
+                else{alert("Introduce un modo de juego válido")}
+            }*/
+            mostrarTablero();
+            for(let i=0;i<5;i++){
+                marcarJugada("Jugador1");
+                mostrarTablero();
+                ganar();
+                if(v1==1||p==9){break}
+                //marcarJugada("Jugador2")
+                CPU()
+                mostrarTablero();
+                ganar();
+                if(v2==1){break}
+            }
+            if(v1==1){alert("Jugador 1 ha ganado")}
+            else if(v2==1){alert("Jugador 2 ha ganado")}
+            else{alert("Empate")}
+        }
+        juego();
+        /*const juego=()=>{
+                alert("Bienvenido al 3 en raya");
+                let avanza=true;
+                while(avanza){
+                    let modo=prompt("Quieres jugar 1 vs. 1 o contra la CPU?(vs/CPU)");
+                    if(modo=="vs"){avanza=false;}
+                    else if(modo.toLowerCase()=="cpu"){modo=modo.toLowerCase();avanza=false;}
+                    else{alert("Introduce un modo de juego válido")}
+                }
+                mostrarTablero();
+                switch(modo){
+                    case"vs":
+                        for(let i=0;i<5;i++){
+                            marcarJugada("Jugador1");
+                            mostrarTablero();
+                            ganar();
+                            if(v1==1||p==9){break}
+                            marcarJugada("Jugador2")
+                            mostrarTablero();
+                            ganar();
+                            if(v2==1){break}
+                        }
+                    break;
+                    case"cpu":
+                        for(let i=0;i<5;i++){
+                            marcarJugada("Jugador1");
+                            mostrarTablero();
+                            ganar();
+                            if(v1==1||p==9){break}
+                            CPU()
+                            mostrarTablero();
+                            ganar();
+                            if(v2==1){break}
+                        }
+                    break;
+                    default:
+                        alert("AAAAA");
+                }
+                if(v1==1){alert("Jugador 1 ha ganado")}
+                else if(v2==1){alert("Jugador 2 ha ganado")}
+                else{alert("Empate")}
+            }*/
+    </script>
+</body>
+</html>

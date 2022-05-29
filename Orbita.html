@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://fonts.sandbox.google.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+<title>Document</title>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    ul{list-style: none; position:relative;margin-top: 200px;display: grid;place-items: center;}
+    li{
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        position:absolute;
+        animation: myOrbit 10s linear infinite;
+    }
+    ul:hover>li{animation-play-state: paused;}
+    li:hover{width: 100px;height: 100px;}
+    li:nth-child(1){background: #0f0;}
+    li:nth-child(2){background: #f00;animation-delay: -1.25s;}
+    li:nth-child(3){background: #00f;animation-delay: -2.5s;}
+    li:nth-child(4){background: #ff0;animation-delay: -3.75s;}
+    li:nth-child(5){background: #0ff;animation-delay: -5s;}
+    li:nth-child(6){background: #f0f;animation-delay: -6.25s;}
+    li:nth-child(7){background: #fff;animation-delay: -7.5s;}
+    li:nth-child(8){background: #fbbf00;animation-delay: -8.75s;}
+    @keyframes myOrbit {
+        from{transform: rotate(0deg) translateX(150px) rotate(0deg);}
+        to{transform: rotate(360deg) translateX(150px) rotate(-360deg);}
+    }
+</style>
+</head>
+<body>
+    <ul>
+        <li><span class="material-symbols-outlined">favorite</span></li>
+        <li><span class="material-symbols-outlined">star</span></li>
+        <li><span class="material-symbols-outlined">flight_land</span></li>
+        <li><span class="material-symbols-outlined">restaurant</span></li>
+        <li><span class="material-symbols-outlined">menu_book</span></li>
+        <li><span class="material-symbols-outlined">liquor</span></li>
+        <li><span class="material-symbols-outlined">equalizer</span></li>
+        <li><span class="material-symbols-outlined">123</span></li>
+    </ul>
+<script>
+    
+</script>
+</body>
+</html>

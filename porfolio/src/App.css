@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',sans-serif;
+}
+header,ul,.head{
+    display: flex;
+}
+nav,.imagen,.title{width: 50%;}
+ul{list-style: none;}
+a{text-decoration: none;color:#000;}
+li{
+    flex-grow: 1;
+    text-align: center;
+    padding: 2.67% 0;
+}
+li>a:hover{
+    border-bottom: 2px solid #000;
+}
+/*Titulo del nav*/
+#TJ97{
+    width:50%;
+    padding: 1% 0;
+    padding-left: 10%;
+}
+.imagen{
+    display: grid;
+    place-items: center;
+}
+.cercle{
+    background-color: orange;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+}
+.head,.projects,.about,.contact{border:1px solid black;width: 90%;margin: auto;}

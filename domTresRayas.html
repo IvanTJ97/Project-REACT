@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<link rel="stylesheet" href="#">
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    .container{
+        width: 333px;
+        outline: 5px black solid;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin: 50px auto;
+    }
+    .casillas{
+        width: 111px;
+        outline: 1px black solid;
+        height: 111px;
+        font-size: 95px;
+        padding: 0 15px;
+    }
+    .ganado{display: none;}
+    .consola{text-align: center;}
+</style>
+</head>
+<body> 
+    <div class="container">
+        <div class="casillas" id="casilla1"></div>
+        <div class="casillas" id="casilla2"></div>
+        <div class="casillas" id="casilla3"></div>
+        <div class="casillas" id="casilla4"></div>
+        <div class="casillas" id="casilla5"></div>
+        <div class="casillas" id="casilla6"></div>
+        <div class="casillas" id="casilla7"></div>
+        <div class="casillas" id="casilla8"></div>
+        <div class="casillas" id="casilla9"></div>
+    </div>
+    <div class="consola"></div>
+<script>
+    const consola=document.querySelector(".consola");
+    consola.innerHTML="<p>Turno del jugador 1</p>"
+    let jugador1=true;ganador=0;p=0;
+    const marcarCasilla=(numero,jugador)=>{
+        const cast=document.querySelector("#"+numero);
+        if(cast.innerHTML!=="<p>X</p>"&& cast.innerHTML!=="<p>O</p>")
+        {(jugador)?(cast.innerHTML="<p>X</p>",jugador1=!jugador1,cast.classList.add("ocup1"),p++,cast.style.background="blue",cast.style.color="white"):
+        (cast.innerHTML="<p>O</p>",jugador1=!jugador1,cast.classList.add("ocup2"),p++,cast.style.background="red")}
+        else{alert("Ya está ocupada la casilla escogida");}
+        (jugador1)?consola.innerHTML="<p>Turno del jugador 1</p>":consola.innerHTML="<p>Turno del jugador 2</p>";
+    }
+    const ganar=()=>{
+        if(document.querySelector("#casilla1").classList.contains("ocup1")&&
+        document.querySelector("#casilla2").classList.contains("ocup1")&&
+        document.querySelector("#casilla3").classList.contains("ocup1")){ganador=1}
+        else if(document.querySelector("#casilla4").classList.contains("ocup1")&&
+        document.querySelector("#casilla5").classList.contains("ocup1")&&
+        document.querySelector("#casilla6").classList.contains("ocup1")){ganador=1}
+        else if(document.querySelector("#casilla7").classList.contains("ocup1")&&
+        document.querySelector("#casilla8").classList.contains("ocup1")&&
+        document.querySelector("#casilla9").classList.contains("ocup1")){ganador=1}
+        else if(document.querySelector("#casilla1").classList.contains("ocup1")&&
+        document.querySelector("#casilla4").classList.contains("ocup1")&&
+        document.querySelector("#casilla7").classList.contains("ocup1")){ganador=1}
+        else if(document.querySelector("#casilla2").classList.contains("ocup1")&&
+        document.querySelector("#casilla5").classList.contains("ocup1")&&
+        document.querySelector("#casilla8").classList.contains("ocup1")){ganador=1}
+        else if(document.querySelector("#casilla3").classList.contains("ocup1")&&
+        document.querySelector("#casilla6").classList.contains("ocup1")&&
+        document.querySelector("#casilla9").classList.contains("ocup1")){ganador=1}
+        else if(document.querySelector("#casilla1").classList.contains("ocup1")&&
+        document.querySelector("#casilla5").classList.contains("ocup1")&&
+        document.querySelector("#casilla9").classList.contains("ocup1")){ganador=1}
+        else if(document.querySelector("#casilla3").classList.contains("ocup1")&&
+        document.querySelector("#casilla5").classList.contains("ocup1")&&
+        document.querySelector("#casilla7").classList.contains("ocup1")){ganador=1}
+            ////
+        else if (document.querySelector("#casilla1").classList.contains("ocup2")&&
+        document.querySelector("#casilla2").classList.contains("ocup2")&&
+        document.querySelector("#casilla3").classList.contains("ocup2")){ganador=2}
+        else if (document.querySelector("#casilla4").classList.contains("ocup2") &&
+        document.querySelector("#casilla5").classList.contains("ocup2")&&
+        document.querySelector("#casilla6").classList.contains("ocup2")){ganador=2}
+        else if (document.querySelector("#casilla7").classList.contains("ocup2") &&
+        document.querySelector("#casilla8").classList.contains("ocup2")&&
+        document.querySelector("#casilla9").classList.contains("ocup2")){ganador=2}
+        else if (document.querySelector("#casilla1").classList.contains("ocup2") &&
+        document.querySelector("#casilla4").classList.contains("ocup2")&&
+        document.querySelector("#casilla7").classList.contains("ocup2")){ganador=2}
+        else if (document.querySelector("#casilla2").classList.contains("ocup2") &&
+        document.querySelector("#casilla5").classList.contains("ocup2")&&
+        document.querySelector("#casilla8").classList.contains("ocup2")){ganador=2}
+        else if (document.querySelector("#casilla3").classList.contains("ocup2") &&
+        document.querySelector("#casilla6").classList.contains("ocup2")&&
+        document.querySelector("#casilla9").classList.contains("ocup2")){ganador=2}
+        else if (document.querySelector("#casilla1").classList.contains("ocup2") &&
+        document.querySelector("#casilla5").classList.contains("ocup2")&&
+        document.querySelector("#casilla9").classList.contains("ocup2")){ganador=2}
+        else if (document.querySelector("#casilla3").classList.contains("ocup2") &&
+        document.querySelector("#casilla5").classList.contains("ocup2")&&
+        document.querySelector("#casilla7").classList.contains("ocup2")){ganador=2}
+        if(ganador===1){
+            document.querySelector(".container").classList.add("ganado")
+            consola.innerHTML = "<h1>Ha ganado el jugador 1!</h1>"
+        }
+        else if(ganador===2){
+            document.querySelector(".container").classList.add("ganado")
+            consola.innerHTML = "<h1>Ha ganado el jugador 2!</h1>"
+        }
+        if(p===9&&ganador===0){
+            document.querySelector(".container").classList.add("ganado")
+            consola.innerHTML = "<h1>Empate!</h1>"
+        }
+    }
+    document.querySelectorAll(".casillas").forEach(obj=>{
+        obj.addEventListener("click",()=>{
+            marcarCasilla(obj.getAttribute("id"),jugador1);
+            ganar();
+            console.log(ganador);
+        });
+    })
+</script>
+</body>
+</html>
