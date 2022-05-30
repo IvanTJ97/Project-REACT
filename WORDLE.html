@@ -1,50 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans&display=swap" rel="stylesheet">
-<title>Document</title>
-<style>
-    *{
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: 'Kumbh Sans',sans-serif;
-        font-size: 35px;
-    }
-    .container{
-        display:flex;
-        justify-content: space-around;
-    }
-    .tablero,.teclado{
-        display: grid;
-        gap:10px;
-        width: 40%;
-        margin-left: 10px;
-        grid-template-columns: repeat(5,1fr);
-        grid-template-rows: repeat(6,100px);
-    }
-    .tablero div,.teclado div:not(.blanco){
-        border: 1px solid #000;
-        display: grid;
-        place-items: center;
-    }
-    .teclado div:hover:not(.blanco){
-        cursor: pointer;
-        background: #ccc;
-    }
-    input{
-        width: 100%;
-        border: 0;
-        text-align: center;
-        height: 100%;
-    }
-</style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Kumbh Sans', sans-serif;
+            font-size: 35px;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .tablero,
+        .teclado {
+            display: grid;
+            gap: 10px;
+            width: 40%;
+            margin-left: 10px;
+            grid-template-columns: repeat(5, 1fr);
+            grid-template-rows: repeat(6, 100px);
+        }
+
+        .tablero div,
+        .teclado div:not(.blanco) {
+            border: 1px solid #000;
+            display: grid;
+            place-items: center;
+        }
+
+        .teclado div:hover:not(.blanco) {
+            cursor: pointer;
+            background: #ccc;
+        }
+
+        input {
+            width: 100%;
+            border: 0;
+            text-align: center;
+            height: 100%;
+        }
+    </style>
 </head>
+
 <body>
     <div class="container">
         <div class="tablero">
@@ -112,35 +121,52 @@
             <div class="enter">Enter</div>
         </div>
     </div>
-<script>
-    let columna=1;fila=0;i=0;Arr=[];
-    const FILAS=["A","B","C","D","E","F"];
-    const PALABRA=["M","A","R","E","M"];
-    const funcion=()=>{
-        document.querySelectorAll("."+FILAS[fila]).forEach(obj=>{
-            obj.style.background="#f00";
-            if(obj.value==PALABRA[i]){obj.style.background="#0f0";Arr.push(obj.value);}
-            else if(PALABRA.indexOf(obj.value)>-1){
-                Arr.push(obj.value);
-                let s=Arr.filter(x=>x==obj.value).length;
-                let r=PALABRA.filter(x=>x==obj.value).length;
-                if(s==1||s<=r){obj.style.background="#ff0";}
+    <script>
+        let columna = 1; fila = 0;
+        const FILAS = ["A", "B", "C", "D", "E", "F"];
+        const PALABRA = ["M", "A", "R", "E", "O"];
+        const funcion = () => {
+            let v = 0;
+            const RESPUESTA = [];
+            const COMPROBANTE = [...PALABRA];
+            document.querySelectorAll("." + FILAS[fila]).forEach(obj => {
+                obj.style.backgroundColor = "#ff0000";
+                RESPUESTA.push(obj.value);
+            });
+            for (let i = 0; i < 5; i++) {
+                if (RESPUESTA[i] == PALABRA[i]) {
+                    RESPUESTA[i] = "";
+                    COMPROBANTE[i] = "";
+                    document.querySelector("#" + FILAS[fila] + (i + 1)).style.backgroundColor = "#00ff00";
+                    v++;
+                }
+            };
+            for (let i = 0; i < 5; i++) {
+                for (let j = 0; j < 5; j++) {
+                    if (RESPUESTA[i] !== "" && RESPUESTA[i] == COMPROBANTE[j]) {
+                        RESPUESTA[i] = "";
+                        COMPROBANTE[j] = "";
+                        document.querySelector("#" + FILAS[fila] + (i + 1)).style.backgroundColor = "#ffff00";
+                    }
+                }
+            };
+            (v == 5) ? alert("HAS GANADO!") : columna = 1; fila++;
+        };
+        document.querySelectorAll(".letrab").forEach(obj => obj.addEventListener("click", () => {
+            if ((columna - 1) == 0 || (columna - 1) % 5 !== 0) {
+                document.querySelector("#" + FILAS[fila] + columna).value = obj.textContent;
+                columna++;
             }
-            i++;
+        }));
+        document.querySelector(".borrar").addEventListener("click", () => {
+            (columna == 1) ? columna = columna : columna--;
+            document.querySelector("#" + FILAS[fila] + columna).value = "";
         });
-        columna=1;fila++;i=0;Arr=[];
-    };
-       document.querySelectorAll(".letrab").forEach(obj=>obj.addEventListener("click",()=>{
-            if((columna-1)==0||(columna-1)%5!=0){document.querySelector("#"+FILAS[fila]+columna).value=obj.textContent;columna++;}
-       }));
-       document.querySelector(".borrar").addEventListener("click",()=>{
-            (columna==1)?columna=columna:columna--;
-            document.querySelector("#"+FILAS[fila]+columna).value="";
-       });
-       document.querySelector(".enter").addEventListener("click",()=>{
-           (columna==6)?funcion():alert("NO");
-           
-       });
-</script>
+        document.querySelector(".enter").addEventListener("click", () => {
+            (columna == 6) ? funcion() : alert("NO");
+
+        });
+    </script>
 </body>
+
 </html>

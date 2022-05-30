@@ -1,6 +1,6 @@
 import './App.css';
 import {useState} from 'react';
-export default ()=>{
+const App=()=>{
   const [pos,setPos]=useState(1);
   const PALABRA=["M","A","R","E","O"];
   const [fila1,setFila1]=useState(["red","red","red","red","red"]);
@@ -10,41 +10,48 @@ export default ()=>{
   const [letraC,setLetraC]=useState("");
   const [letraQ,setLetraQ]=useState("");
   const marcar=input=>{
-    (pos==1)?setLetraP(input):
-    (pos==2)?setLetraS(input):
-    (pos==3)?setLetraT(input):
-    (pos==4)?setLetraC(input):
-    (pos==5)?setLetraQ(input):
+    (pos===1)?setLetraP(input):
+    (pos===2)?setLetraS(input):
+    (pos===3)?setLetraT(input):
+    (pos===4)?setLetraC(input):
+    (pos===5)?setLetraQ(input):
     setLetraQ(letraQ);
     (pos>5)?setPos(6):setPos(pos+1);
   };
   const borrar=()=>{
-    (pos==2)?setLetraP(""):
-    (pos==3)?setLetraS(""):
-    (pos==4)?setLetraT(""):
-    (pos==5)?setLetraC(""):
+    (pos===2)?setLetraP(""):
+    (pos===3)?setLetraS(""):
+    (pos===4)?setLetraT(""):
+    (pos===5)?setLetraC(""):
     setLetraQ("");
-    (pos==1)?setPos(1):setPos(pos-1);
+    (pos===1)?setPos(1):setPos(pos-1);
     console.log(pos);
   }
   const enter=()=>{
-    if(letraQ!=""){
+    if(letraQ!==""){
       const RESPUESTA=[letraP,letraS,letraT,letraC,letraQ];
+      const COMPROBANTE=PALABRA;
       for(let i=0;i<5;i++){
-        if(RESPUESTA[i]==PALABRA[i])setFila1(fila1[i]="green");
-        else setFila1(fila1[i]="red");
+        if(RESPUESTA[i]===PALABRA[i]){setFila1(fila1[i]="green");RESPUESTA[i]="";COMPROBANTE[i]=""};
       };
+      for(let i=0;i<5;i++){
+        for(let j=0;j<5;j++){
+          if(RESPUESTA[i]!==""&&RESPUESTA[i]===COMPROBANTE[j]){setFila1(fila1[i]="yellow");RESPUESTA[i]="";COMPROBANTE[j]=""};
+        }
+      }
       console.log(fila1);
+      console.log(RESPUESTA);
+      console.log(COMPROBANTE);
     }
     else{alert("NOP")}
   }
   return <div className="container">
       <div className="tablero">
-        <div className="letter" style={{backgroundColor:fila1[0]}}>{letraP}</div>
-        <div className="letter" style={{backgroundColor:fila1[1]}}>{letraS}</div>
-        <div className="letter" style={{backgroundColor:fila1[2]}}>{letraT}</div>
-        <div className="letter" style={{backgroundColor:fila1[3]}}>{letraC}</div>
-        <div className="letter" style={{backgroundColor:fila1[4]}}>{letraQ}</div>
+        <div className="letter">{letraP}</div>
+        <div className="letter">{letraS}</div>
+        <div className="letter">{letraT}</div>
+        <div className="letter">{letraC}</div>
+        <div className="letter">{letraQ}</div>
         <div className="letter"></div>
         <div className="letter"></div>
         <div className="letter"></div>
@@ -105,3 +112,4 @@ export default ()=>{
       </div>
     </div>
 };
+export default App;
