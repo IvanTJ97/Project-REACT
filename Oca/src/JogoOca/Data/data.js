@@ -367,7 +367,7 @@ const obj = [
         "Pos": "58",
         "X": X2,
         "Y": Y4,
-        "Text": "Muerte, vuelve a la casilla inicial o bebe un chupito mortal"
+        "Text": "Te toca el chupito mortal"
     },
     {
         "Pos": "59",

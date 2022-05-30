@@ -12,131 +12,131 @@ export default ()=>{
   const [J,setJ]=useState(1);
   const tirar=()=>{
     const R=Math.floor(Math.random()*(6-1)+1);
-    if(J==1){
-      if(j1+R==4)setj1(8);
-      else if(j1+R==5)setj1(11);
-      else if(j1+R==8)setj1(13);
-      else if(j1+R==13)setj1(17);
-      else if(j1+R==17)setj1(22);
-      else if(j1+R==22)setj1(26);
-      else if(j1+R==25)setj1(52);
-      else if(j1+R==26)setj1(31);
-      else if(j1+R==31)setj1(35);
-      else if(j1+R==35)setj1(40);
-      else if(j1+R==40)setj1(44);
-      else if(j1+R==44)setj1(49);
-      else if(j1+R==49)setj1(53);
-      else if(j1+R==53)setj1(58);
-      else if(j1+R==58)setj1(62);
+    if(J===1){
+      if(j1+R===4)setj1(8);
+      else if(j1+R===5)setj1(11);
+      else if(j1+R===8)setj1(13);
+      else if(j1+R===13)setj1(17);
+      else if(j1+R===17)setj1(22);
+      else if(j1+R===22)setj1(26);
+      else if(j1+R===25)setj1(52);
+      else if(j1+R===26)setj1(31);
+      else if(j1+R===31)setj1(35);
+      else if(j1+R===35)setj1(40);
+      else if(j1+R===40)setj1(44);
+      else if(j1+R===44)setj1(49);
+      else if(j1+R===49)setj1(53);
+      else if(j1+R===53)setj1(58);
+      else if(j1+R===58)setj1(62);
       else if(j1+R>62)setj1(62);
       else setj1(j1+R);
       setinfo(Data[j1+R<62?j1+R:62].Text);
     }
-    else if(J==2){
-      if(j2+R==4)setj2(8);
-      else if(j2+R==5)setj2(11);
-      else if(j2+R==8)setj2(13);
-      else if(j2+R==13)setj2(17);
-      else if(j2+R==17)setj2(22);
-      else if(j2+R==22)setj2(26);
-      else if(j2+R==25)setj2(52);
-      else if(j2+R==26)setj2(31);
-      else if(j2+R==31)setj2(35);
-      else if(j2+R==35)setj2(40);
-      else if(j2+R==40)setj2(44);
-      else if(j2+R==44)setj2(49);
-      else if(j2+R==49)setj2(53);
-      else if(j2+R==53)setj2(58);
-      else if(j2+R==58)setj2(62);
+    else if(J===2){
+      if(j2+R===4)setj2(8);
+      else if(j2+R===5)setj2(11);
+      else if(j2+R===8)setj2(13);
+      else if(j2+R===13)setj2(17);
+      else if(j2+R===17)setj2(22);
+      else if(j2+R===22)setj2(26);
+      else if(j2+R===25)setj2(52);
+      else if(j2+R===26)setj2(31);
+      else if(j2+R===31)setj2(35);
+      else if(j2+R===35)setj2(40);
+      else if(j2+R===40)setj2(44);
+      else if(j2+R===44)setj2(49);
+      else if(j2+R===49)setj2(53);
+      else if(j2+R===53)setj2(58);
+      else if(j2+R===58)setj2(62);
       else if(j2+R>62)setj2(62);
       else setj2(j2+R);
       setinfo(Data[j2+R<62?j2+R:62].Text);
     }
-    else if(J==3){
-      if(j3+R==4)setj3(8);
-      else if(j3+R==5)setj3(11);
-      else if(j3+R==8)setj3(13);
-      else if(j3+R==13)setj3(17);
-      else if(j3+R==17)setj3(22);
-      else if(j3+R==22)setj3(26);
-      else if(j3+R==25)setj3(52);
-      else if(j3+R==26)setj3(31);
-      else if(j3+R==31)setj3(35);
-      else if(j3+R==35)setj3(40);
-      else if(j3+R==40)setj3(44);
-      else if(j3+R==44)setj3(49);
-      else if(j3+R==49)setj3(53);
-      else if(j3+R==53)setj3(58);
-      else if(j3+R==58)setj3(62);
+    else if(J===3){
+      if(j3+R===4)setj3(8);
+      else if(j3+R===5)setj3(11);
+      else if(j3+R===8)setj3(13);
+      else if(j3+R===13)setj3(17);
+      else if(j3+R===17)setj3(22);
+      else if(j3+R===22)setj3(26);
+      else if(j3+R===25)setj3(52);
+      else if(j3+R===26)setj3(31);
+      else if(j3+R===31)setj3(35);
+      else if(j3+R===35)setj3(40);
+      else if(j3+R===40)setj3(44);
+      else if(j3+R===44)setj3(49);
+      else if(j3+R===49)setj3(53);
+      else if(j3+R===53)setj3(58);
+      else if(j3+R===58)setj3(62);
       else if(j3+R>62)setj3(62);
       else setj3(j3+R);
       setinfo(Data[j3+R<62?j3+R:62].Text);
     }
-    else if(J==4){
-      if(j4+R==4)setj4(8);
-      else if(j4+R==5)setj4(11);
-      else if(j4+R==8)setj4(13);
-      else if(j4+R==13)setj4(17);
-      else if(j4+R==17)setj4(22);
-      else if(j4+R==22)setj4(26);
-      else if(j4+R==25)setj4(52);
-      else if(j4+R==26)setj4(31);
-      else if(j4+R==31)setj4(35);
-      else if(j4+R==35)setj4(40);
-      else if(j4+R==40)setj4(44);
-      else if(j4+R==44)setj4(49);
-      else if(j4+R==49)setj4(53);
-      else if(j4+R==53)setj4(58);
-      else if(j4+R==58)setj4(62);
+    else if(J===4){
+      if(j4+R===4)setj4(8);
+      else if(j4+R===5)setj4(11);
+      else if(j4+R===8)setj4(13);
+      else if(j4+R===13)setj4(17);
+      else if(j4+R===17)setj4(22);
+      else if(j4+R===22)setj4(26);
+      else if(j4+R===25)setj4(52);
+      else if(j4+R===26)setj4(31);
+      else if(j4+R===31)setj4(35);
+      else if(j4+R===35)setj4(40);
+      else if(j4+R===40)setj4(44);
+      else if(j4+R===44)setj4(49);
+      else if(j4+R===49)setj4(53);
+      else if(j4+R===53)setj4(58);
+      else if(j4+R===58)setj4(62);
       else if(j4+R>62)setj4(62);
       else setj4(j4+R);
       setinfo(Data[j4+R<62?j4+R:62].Text);
     }
-    else if(J==5){
-      if(j5+R==4)setj5(8);
-      else if(j5+R==5)setj5(11);
-      else if(j5+R==8)setj5(13);
-      else if(j5+R==13)setj5(17);
-      else if(j5+R==17)setj5(22);
-      else if(j5+R==22)setj5(26);
-      else if(j5+R==25)setj5(52);
-      else if(j5+R==26)setj5(31);
-      else if(j5+R==31)setj5(35);
-      else if(j5+R==35)setj5(40);
-      else if(j5+R==40)setj5(44);
-      else if(j5+R==44)setj5(49);
-      else if(j5+R==49)setj5(53);
-      else if(j5+R==53)setj5(58);
-      else if(j5+R==58)setj5(62);
+    else if(J===5){
+      if(j5+R===4)setj5(8);
+      else if(j5+R===5)setj5(11);
+      else if(j5+R===8)setj5(13);
+      else if(j5+R===13)setj5(17);
+      else if(j5+R===17)setj5(22);
+      else if(j5+R===22)setj5(26);
+      else if(j5+R===25)setj5(52);
+      else if(j5+R===26)setj5(31);
+      else if(j5+R===31)setj5(35);
+      else if(j5+R===35)setj5(40);
+      else if(j5+R===40)setj5(44);
+      else if(j5+R===44)setj5(49);
+      else if(j5+R===49)setj5(53);
+      else if(j5+R===53)setj5(58);
+      else if(j5+R===58)setj5(62);
       else if(j5+R>62)setj5(62);
       else setj5(j5+R);
       setinfo(Data[j5+R<62?j5+R:62].Text);
     }
     else{
-      if(j6+R==4)setj6(8);
-      else if(j6+R==5)setj6(11);
-      else if(j6+R==8)setj6(13);
-      else if(j6+R==13)setj6(17);
-      else if(j6+R==17)setj6(22);
-      else if(j6+R==22)setj6(26);
-      else if(j6+R==25)setj6(52);
-      else if(j6+R==26)setj6(31);
-      else if(j6+R==31)setj6(35);
-      else if(j6+R==35)setj6(40);
-      else if(j6+R==40)setj6(44);
-      else if(j6+R==44)setj6(49);
-      else if(j6+R==49)setj6(53);
-      else if(j6+R==53)setj6(58);
-      else if(j6+R==58)setj6(62);
+      if(j6+R===4)setj6(8);
+      else if(j6+R===5)setj6(11);
+      else if(j6+R===8)setj6(13);
+      else if(j6+R===13)setj6(17);
+      else if(j6+R===17)setj6(22);
+      else if(j6+R===22)setj6(26);
+      else if(j6+R===25)setj6(52);
+      else if(j6+R===26)setj6(31);
+      else if(j6+R===31)setj6(35);
+      else if(j6+R===35)setj6(40);
+      else if(j6+R===40)setj6(44);
+      else if(j6+R===44)setj6(49);
+      else if(j6+R===49)setj6(53);
+      else if(j6+R===53)setj6(58);
+      else if(j6+R===58)setj6(62);
       else if(j6+R>62)setj6(62);
       else setj6(j6+R);
       setinfo(Data[j6+R<62?j6+R:62].Text);
     };
     ganar();
-    (J==1)?setJ(2):(J==2)?setJ(3):(J==3)?setJ(4):(J==4)?setJ(5):(J==5)?setJ(6):setJ(1);
+    (J===1)?setJ(2):(J===2)?setJ(3):(J===3)?setJ(4):(J===4)?setJ(5):(J===5)?setJ(6):setJ(1);
   };
   const ganar=()=>{
-    if(j1==62&&j1==j2&&j1==j3&&j1==j4&&j1==j5&&j1==j6)window.location.reload(false);
+    if(j1===62&&j1===j2&&j1===j3&&j1===j4&&j1===j5&&j1===j6)window.location.reload(false);
   }
   return <>
   <Test>
