@@ -5,9 +5,9 @@ export default ()=>{
       <h2 id='TJ97'><a href="#">TJ97</a></h2>
       <nav>
         <ul>
-          <li><a href="#">Projects</a></li>
-          <li><a href="#">About me</a></li>
-          <li><a href="#">Contact</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#about">About me</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
     </header>
@@ -22,15 +22,41 @@ export default ()=>{
         <h4>JS,CSS,HTML,REACT,STYLED COMPONENTS, REACT ROUTER, FIREBASE, GIT, JAVA, BOOTSTRAP</h4>
       </div>
     </article>
-    <article className='projects'>
+    <article className='projects' id='projects'>
       <h2>Projects</h2>
+      <section>
+        <h4>Section 1</h4>
+        <p>Description</p>
+      </section>
+      <section>
+        <h4>Section 2</h4>
+        <p>Description</p>
+      </section>
+      <section>
+        <h4>Section 3</h4>
+        <p>Description</p>
+      </section>
+      <section>
+        <h4>Section 4</h4>
+        <p>Description</p>
+      </section>
     </article>
-    <article className='about'>
+    <article className='about' id='about'>
       <h2>About me</h2>
+        <p>About me 1</p>
+        <p>About me 2</p>
+        <p>About me 3</p>
+        <p>About me 4</p>
+        <p>About me 5</p>
     </article>
-    <article className='contact'>
+    <article className='contact' id='contact'>
       <h2>Contact</h2>
+      <ul>
+        <li>Tlf</li>
+        <li><input type="button" value="Email" class="button-1"/></li>
+        <li><input type="button" value="GitHub" class="button-1"/></li>
+      </ul>
     </article>
-    <footer>Footer</footer>
+    <footer>Cosecha propria... aquí hay patacas</footer>
   </div>
 }
