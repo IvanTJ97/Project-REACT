@@ -7,9 +7,7 @@
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',sans-serif;
 }
-header,ul,.head{
-    display: flex;
-}
+header,ul,.head{display: flex;}
 nav,.imagen,.title{width: 50%;}
 ul{list-style: none;}
 a{text-decoration: none;color:#000;}
@@ -32,10 +30,10 @@ li>a:hover{
     place-items: center;
 }
 .cercle{
-    background-color: orange;
+    background-image:url("../public/perro.jpg");
     border-radius: 50%;
-    width: 50px;
-    height: 50px;
+    width: 150px;
+    height: 150px;
 }
 .head,.projects,.about,.contact{width: 90%;margin: auto;}
 .projects{
@@ -64,6 +62,7 @@ section{
   color: #FFFFFF;
   cursor: pointer;
   padding: 10px 16px;
+  margin-top: 10px;
 }
 .button-1:hover{
   background-color: #F082AC;
