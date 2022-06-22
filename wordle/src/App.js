@@ -1,7 +1,9 @@
 import './App.css';
 import {useState} from 'react';
+import Linea from './Linea/';
 const App=()=>{
   const [pos,setPos]=useState(1);
+  const [fila,setFila]=useState(1);
   const PALABRA=["M","A","R","E","O"];
   const [fila1,setFila1]=useState(["red","red","red","red","red"]);
   const [letraP,setLetraP]=useState("");
@@ -28,6 +30,7 @@ const App=()=>{
     console.log(pos);
   }
   const enter=()=>{
+    setFila(fila+1);
     if(letraQ!==""){
       const RESPUESTA=[letraP,letraS,letraT,letraC,letraQ];
       const COMPROBANTE=PALABRA;
@@ -47,36 +50,12 @@ const App=()=>{
   }
   return <div className="container">
       <div className="tablero">
-        <div className="letter">{letraP}</div>
-        <div className="letter">{letraS}</div>
-        <div className="letter">{letraT}</div>
-        <div className="letter">{letraC}</div>
-        <div className="letter">{letraQ}</div>
-        <div className="letter"></div>
-        <div className="letter"></div>
-        <div className="letter"></div>
-        <div className="letter"></div>
-        <div className="letter"></div>
-        <div className="letter"></div>
-        <div className="letter"></div>
-        <div className="letter"></div>
-        <div className="letter"></div>
-        <div className="letter"></div>
-        <div className="letter"></div>
-        <div className="letter"></div>
-        <div className="letter"></div>
-        <div className="letter"></div>
-        <div className="letter"></div>
-        <div className="letter"></div>
-        <div className="letter"></div>
-        <div className="letter"></div>
-        <div className="letter"></div>
-        <div className="letter"></div>
-        <div className="letter"></div>
-        <div className="letter"></div>
-        <div className="letter"></div>
-        <div className="letter"></div>
-        <div className="letter"></div>
+        <Linea P={(fila===1)?letraP:""}S={(fila===1)?letraS:""}T={(fila===1)?letraT:""}C={(fila===1)?letraC:""}Q={(fila===1)?letraQ:""} />
+        <Linea P={(fila===2)?letraP:""}S={(fila===2)?letraS:""}T={(fila===2)?letraT:""}C={(fila===2)?letraC:""}Q={(fila===2)?letraQ:""} />
+        <Linea P={(fila===3)?letraP:""}S={(fila===3)?letraS:""}T={(fila===3)?letraT:""}C={(fila===3)?letraC:""}Q={(fila===3)?letraQ:""} />
+        <Linea P={(fila===4)?letraP:""}S={(fila===4)?letraS:""}T={(fila===4)?letraT:""}C={(fila===4)?letraC:""}Q={(fila===4)?letraQ:""} />
+        <Linea P={(fila===5)?letraP:""}S={(fila===5)?letraS:""}T={(fila===5)?letraT:""}C={(fila===5)?letraC:""}Q={(fila===5)?letraQ:""} />
+        <Linea P={(fila===6)?letraP:""}S={(fila===6)?letraS:""}T={(fila===6)?letraT:""}C={(fila===6)?letraC:""}Q={(fila===6)?letraQ:""} />
       </div>
       <div className="teclado">
         <div className="letrab" onClick={()=>{marcar("Q")}}>Q</div>
