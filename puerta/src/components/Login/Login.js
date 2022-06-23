@@ -19,9 +19,9 @@ export default ()=>{
         console.log(array);
         if(array.length==1){
             if(array[0].password==password)setState({name:array[0].name,id:array[0].id});
-            else console.log("No contrraseña")
+            else alert("No contrraseña");
         }
-        else console.log("no existe user");
+        else alert("no existe user");
     };
     return <Container>
         <Modal>
