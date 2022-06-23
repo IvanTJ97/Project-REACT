@@ -1,7 +1,6 @@
 import './App.css';
 import Modal from './Modal/';
 import {useState} from 'react';
-import { Span } from './App.styles'
 
 const App=()=>{
   const [display,setDisplay]=useState(false);
