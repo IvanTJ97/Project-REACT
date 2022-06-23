@@ -1,6 +1,15 @@
 import './App.css';
-export default ()=>{
-  return <div className="container">
+import Modal from './Modal/';
+import {useState} from 'react';
+import { Span } from './App.styles'
+
+const App=()=>{
+  const [display,setDisplay]=useState(false);
+  const funcion=()=>{
+    setDisplay(false);
+  };
+  return <>
+  <div className="container">
     <header>
       <h2 id='TJ97'><a href="#">TJ97-Ivan Tejedor Farreras</a></h2>
       <nav>
@@ -53,11 +62,13 @@ export default ()=>{
     <article className='contact' id='contact'>
       <h2>Contact</h2>
       <ul>
-        <li><input type="button" value="610218409" className="button-1"/></li>
-        <li><input type="button" value="ivan.tejfar@gmail.com" className="button-1"/></li>
+        <li><input type="button" value="Email" className="button-1" onClick={()=>{setDisplay(!display)}}/></li>
         <li><input type="button" value="GitHub" className="button-1"/></li>
       </ul>
     </article>
     <footer>Cosecha propria... aquí hay patacas v0.0.1</footer>
   </div>
+  <Modal display={display} func={funcion}/>
+  </>
 }
+export default App;
