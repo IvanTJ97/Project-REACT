@@ -50,7 +50,8 @@ input{
 }
 @media screen and (max-width: 799px) {
     width:100%;
-    height:100%;
+    height:100vh;
+    margin-top:0;
     flex-direction:column;
     .inicio{
       max-height:100vh;
