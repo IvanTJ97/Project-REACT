@@ -4,12 +4,6 @@ export const Container=styled.div`
   justify-content: space-evenly;
   place-items:center;
   margin-top: 1%;
-  @media screen and (max-width: 800px) {
-  flex-direction:column;
-  .teclado{
-    margin-top:50px;
-  }
-}
 .inicio{
     display:${({visible})=>visible?"none":"grid"};
     place-items:center;
@@ -20,10 +14,6 @@ input{
     padding:25px;
     background-color:#f0c;
     cursor: pointer;
-    display:${({visible2})=>visible2?"none":"block"};
-}
-h1{
-  display:${({visible2})=>visible2?"block":"none"};
 }
 .teclado,.tablero{
   display: ${({visible})=>visible?"grid":"none"};
@@ -49,5 +39,16 @@ h1{
 }
 .yellow{
   background-color: #ff0;
+}
+@media screen and (max-width: 800px) {
+    width:100%;
+    flex-direction:column;
+    .teclado,.tablero{
+      padding:10px;
+      width:100%;
+      grid-template-columns: repeat(5, 1fr);
+      grid-template-rows: repeat(6,40px);
+    }
+    .teclado{margin-top:25px;}
 }
 `

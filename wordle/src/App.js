@@ -301,7 +301,6 @@ const App=()=>{
   return <Container visible={visible}>
       <div className="inicio" visible={visible}>
         <input type="button" value="COMENZAR" onClick={generarPalabra}/>
-        <h1>¡HAS GANADO!</h1>
       </div>
       <div className="tablero" visible={visible}>
         {array.map((obj,i)=><div key={i} className={obj.class}>{obj.value}</div>)}
