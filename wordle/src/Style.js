@@ -22,21 +22,20 @@ input{
   grid-template-columns: repeat(5, 17%);
   grid-template-rows: repeat(6, 80px);
 }
-.tablero div,.teclado div:not(.blanco) {
-  
+.tablero div,.teclado div {
   display: grid;
   place-items: center;
 }
 .teclado div{
   border-radius:10px;
   background-color:#ccc;
-  box-shadow: 0 1px 2px 0 rgba(0,0,0,0.2), 0 3px 10px 0 rgba(0,0,0,0.19);;
+  box-shadow: 0 1px 2px 0 rgba(0,0,0,0.2), 0 3px 10px 0 rgba(0,0,0,0.19);
   margin:3px;
 }
 .tablero div{
   border:2px solid #000;
 }
-.teclado div:hover:not(.blanco) {
+.teclado div:hover{
   cursor: pointer;
   background: #ccc;
 }

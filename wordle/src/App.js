@@ -2,7 +2,7 @@ import './App.css';
 import {Container} from './Style';
 import {useState,useEffect} from 'react';
 import { getItems } from './app/api';
-import { AiOutlineEnter, AiOutlineArrowLeft } from "react-icons/ai";
+import { AiOutlineEnter, AiOutlineArrowLeft, AiOutlineReload } from "react-icons/ai";
 const App=()=>{
   const [PALABRA,setPALABRA]=useState([]);
   const [visible,setVisible]=useState(false);
@@ -307,7 +307,7 @@ const App=()=>{
       </div>
       <div className="teclado" visible={visible}>
         {TECLADO.map((obj,i)=><div key={i} onClick={()=>{marcar(`${obj}`)}}>{obj}</div>)}
-        <div className="blanco"></div>
+      <div className="blanco" onClick={()=>{window.location.reload(false)}}><AiOutlineReload /></div>
       <div onClick={()=>{borrar()}}><AiOutlineArrowLeft /></div>
       <div onClick={()=>{enter()}}><AiOutlineEnter /></div>
       </div>
