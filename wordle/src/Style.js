@@ -51,16 +51,16 @@ input{
     width:100%;
     flex-direction:column;
     .inicio{
-      height:100vh;
-      overflow:hidden;
+      max-height:100vh;
     }
     .teclado,.tablero{
-      justify-content:space-around;
+      justify-content:space-evenly;
+      align-items:stretch;
       padding:10px;
       width:100%;
       grid-template-columns: repeat(5, 1fr);
       grid-template-rows: repeat(6,50px);
     }
-    .teclado{margin-top:15px;}
+    .teclado{margin-top:5px;}
 }
 `
