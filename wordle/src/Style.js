@@ -58,14 +58,13 @@ input{
     }
     .teclado,.tablero{
       justify-content:space-evenly;
-      align-items:stretch;
       padding:10px;
       width:100%;
       grid-template-columns: repeat(5, 1fr);
       grid-template-rows: repeat(6,48px);
     }
     .teclado{
-      margin-top:5px;
+      margin-top:-35px;
     }
 }
 `
