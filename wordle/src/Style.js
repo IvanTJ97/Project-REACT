@@ -4,6 +4,12 @@ export const Container=styled.div`
   justify-content: space-evenly;
   place-items:center;
   margin-top: 1%;
+  @media screen and (max-width: 800px) {
+  flex-direction:column;
+  .teclado{
+    margin-top:50px;
+  }
+}
 .inicio{
     display:${({visible})=>visible?"none":"grid"};
     place-items:center;

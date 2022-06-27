@@ -2,10 +2,10 @@ import './App.css';
 import {Container} from './Style';
 import {useState,useEffect} from 'react';
 import { getItems } from './app/api';
+import { AiOutlineEnter, AiOutlineArrowLeft } from "react-icons/ai";
 const App=()=>{
   const [PALABRA,setPALABRA]=useState([]);
   const [visible,setVisible]=useState(false);
-  const [visible2,setVisible2]=useState(false);
   const [pos,setPos]=useState(1);
   const [fila,setFila]=useState(1);
   const TECLADO=["Q","W","E","R","T","Y","U","I","O","P","A","S","D","F","G","H","J","K","L","Ñ","Z","X","C","V","B","N","M"];
@@ -309,8 +309,8 @@ const App=()=>{
       <div className="teclado" visible={visible}>
         {TECLADO.map((obj,i)=><div key={i} onClick={()=>{marcar(`${obj}`)}}>{obj}</div>)}
         <div className="blanco"></div>
-        <div onClick={()=>{borrar()}}>Borrar</div>
-        <div onClick={()=>{enter()}}>Enter</div>
+      <div onClick={()=>{borrar()}}><AiOutlineArrowLeft /></div>
+      <div onClick={()=>{enter()}}><AiOutlineEnter /></div>
       </div>
     </Container>
 };

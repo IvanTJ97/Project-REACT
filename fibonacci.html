@@ -5,8 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        canvas{
+            border:1px solid #000;
+            margin: auto;
+        }
+    </style>
 </head>
 <body>
+    <canvas id="tutorial" width="1000" height="750">current stock price: $3.15 + 0.15</canvas>
     <script>
         const fibonacci=(a)=>{
             let b=1;let c=1;let d=1;let s=b+","+d;
@@ -18,7 +25,29 @@
             }
             return s
         }
-        console.log(fibonacci(18));
+        const draw=(input)=>{
+            let a=0;b=1;c=0;array=[1];
+            for (let i=0;i<input;i++) {
+                c=a+b;
+                array.push(c);
+                a=b;
+                b=c;
+            };
+            let x=500,y=375;
+            const canvas=document.getElementById('tutorial');
+            const ctx=canvas.getContext('2d');
+            ctx.beginPath();
+            ctx.moveTo(x,y);
+            for(let i=0;i<input;i++){
+                if(i%4===0)x+=array[i];
+                else if(i%4===1)y+=array[i];
+                else if(i%4===2)x-=array[i];
+                else y-=array[i];
+                ctx.lineTo(x,y)
+            };
+            ctx.stroke();
+        }
+        draw(20);
     </script>
 </body>
 </html>
