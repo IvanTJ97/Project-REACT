@@ -6,33 +6,3 @@
   box-sizing: border-box;
   font-family: sans-serif;
 }
-.container {
-  display: flex;
-  justify-content: space-evenly;
-  margin-top: 1%;
-}
-.teclado,.tablero{
-  display: grid;
-  gap: 10px;
-  width: 45%;
-  grid-template-columns: repeat(5, 17%);
-  grid-template-rows: repeat(6, 80px);
-}
-.tablero div,.teclado div:not(.blanco) {
-  border: 1px solid #000;
-  display: grid;
-  place-items: center;
-}
-.teclado div:hover:not(.blanco) {
-  cursor: pointer;
-  background: #ccc;
-}
-.green{
-  background-color: #0f0;
-}
-.red{
-  background-color: #f00;
-}
-.yellow{
-  background-color: #ff0;
-}
