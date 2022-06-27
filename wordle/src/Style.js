@@ -23,9 +23,16 @@ input{
   grid-template-rows: repeat(6, 80px);
 }
 .tablero div,.teclado div:not(.blanco) {
-  border: 1px solid #000;
+  
   display: grid;
   place-items: center;
+}
+.teclado div{
+  border-radius:10px;
+  background-color:#ccc;
+}
+.tablero div{
+  border:2px solid #000;
 }
 .teclado div:hover:not(.blanco) {
   cursor: pointer;
@@ -40,15 +47,20 @@ input{
 .yellow{
   background-color: #ff0;
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 799px) {
     width:100%;
     flex-direction:column;
+    .inicio{
+      height:100vh;
+      overflow:hidden;
+    }
     .teclado,.tablero{
+      justify-content:space-around;
       padding:10px;
       width:100%;
       grid-template-columns: repeat(5, 1fr);
-      grid-template-rows: repeat(6,40px);
+      grid-template-rows: repeat(6,50px);
     }
-    .teclado{margin-top:25px;}
+    .teclado{margin-top:15px;}
 }
 `
