@@ -1,8 +1,8 @@
 import './App.css';
-import Rayas from './component/Jogo3raya';
+import Routes from './application/routes';
 const App=()=>{
   return <div>
-    <Rayas/>
+    <Routes/>
   </div>
 }
 

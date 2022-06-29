@@ -11,7 +11,7 @@ export const Test = styled.div`
         background-color:#f0c;
         padding:30px;
         display:inline-block;
-        min-width:100px;
+        width:200px;
         text-align:center;
         &:hover{
             background-color:#c1179f;

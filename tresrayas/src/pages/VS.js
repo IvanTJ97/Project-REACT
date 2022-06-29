@@ -1,6 +1,7 @@
+import JogoVS from '../components/Jogo3raya/';
 const VS=()=>{
     return <>
-        <h1>VS</h1>
+        <JogoVS/>
     </>
 }
 export default VS;

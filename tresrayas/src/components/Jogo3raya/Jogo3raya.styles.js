@@ -1,11 +1,7 @@
 import styled from 'styled-components';
 
 export const Test = styled.div`
-h1,h2{margin:0}
-h2{
-    text-align:center;
-    font-size:125px;
-}
+h1{margin:0}
 display:grid;
 place-items:center;
 .container{
@@ -14,12 +10,15 @@ place-items:center;
     grid-template-rows:repeat(3,150px);
     div{
         border:1px solid #000;
+        display:grid;
+        place-items:center;
+        font-size:100px;
     }
 }
 .playerX{
-    background-color:red;
+    background-color:#00f;
 }
 .playerO{
-    background-color:blue;
+    background-color:#f00;
 }
 `;
