@@ -1,5 +1,5 @@
 import './App.css';
-import {Container} from './Style';
+import {Container} from './Estilo';
 import {useState,useEffect} from 'react';
 import { getItems } from './app/api';
 import { AiOutlineEnter, AiOutlineArrowLeft, AiOutlineReload } from "react-icons/ai";
