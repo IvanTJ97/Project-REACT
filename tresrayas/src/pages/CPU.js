@@ -1,6 +1,7 @@
+import JogoCPU from '../components/J3rayaCPU/';
 const CPU=()=>{
     return <>
-        <h1>CPU</h1>
+        <JogoCPU/>
     </>
 }
 export default CPU;

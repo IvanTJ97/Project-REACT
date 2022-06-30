@@ -6,10 +6,10 @@ import Error from '../pages/Error';
 export default () => (
     <BrowserRouter>
         <Routes>
-            <Route path="/" element={<Home/>}/>
-            <Route path="/vs" element={<VS/>}/>
-            <Route path="/cpu" element={<CPU/>} />
-            <Route path="*" element={<Error/>}/>
+            <Route path="/TicToe/" element={<Home/>}/>
+            <Route path="/TicToe/vs/" element={<VS/>}/>
+            <Route path="/TicToe/cpu/" element={<CPU/>} />
+            <Route path="/TicToe/*" element={<Error/>}/>
         </Routes>
     </BrowserRouter>
 );

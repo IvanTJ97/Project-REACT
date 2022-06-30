@@ -3,7 +3,6 @@ import {useState} from 'react';
 export default ()=>{
   const [player,setPlayer]=useState(true);
   const [turn,setTurn]=useState(1);
-  const [victoria,setVictoria]=useState(0);
   const [tablero,setTablero]=useState([
     {id:0,class:"",value:""},
     {id:1,class:"",value:""},
@@ -79,31 +78,27 @@ export default ()=>{
         tablero[6].value===tablero[7].value&&tablero[6].value===tablero[8].value&&tablero[6].value==="X"||
         tablero[0].value===tablero[3].value&&tablero[0].value===tablero[6].value&&tablero[0].value==="X"||
         tablero[1].value===tablero[4].value&&tablero[1].value===tablero[7].value&&tablero[1].value==="X"||
-        tablero[2].value===tablero[5].value&&tablero[2].value===tablero[5].value&&tablero[2].value==="X"||
+        tablero[2].value===tablero[5].value&&tablero[2].value===tablero[8].value&&tablero[2].value==="X"||
         tablero[0].value===tablero[4].value&&tablero[0].value===tablero[8].value&&tablero[0].value==="X"||
         tablero[2].value===tablero[4].value&&tablero[2].value===tablero[6].value&&tablero[2].value==="X")
-        {setVictoria(1)}
+        {alert("Ha ganado el jugador 1")}
       else if(tablero[0].value===tablero[1].value&&tablero[0].value===tablero[2].value&&tablero[0].value==="O"||
         tablero[3].value===tablero[4].value&&tablero[3].value===tablero[5].value&&tablero[3].value==="O"||
         tablero[6].value===tablero[7].value&&tablero[6].value===tablero[8].value&&tablero[6].value==="O"||
         tablero[0].value===tablero[3].value&&tablero[0].value===tablero[6].value&&tablero[0].value==="O"||
         tablero[1].value===tablero[4].value&&tablero[1].value===tablero[7].value&&tablero[1].value==="O"||
-        tablero[2].value===tablero[5].value&&tablero[2].value===tablero[5].value&&tablero[2].value==="O"||
+        tablero[2].value===tablero[5].value&&tablero[2].value===tablero[8].value&&tablero[2].value==="O"||
         tablero[0].value===tablero[4].value&&tablero[0].value===tablero[8].value&&tablero[0].value==="O"||
         tablero[2].value===tablero[4].value&&tablero[2].value===tablero[6].value&&tablero[2].value==="O")
-        {setVictoria(2)};
-      ganar();
+        {alert("Ha ganado el jugador 2")};
     };
   };
-  const ganar=()=>{
-    (victoria===1)?alert("Ha ganado el jugador 1"):(victoria===2)?alert("Ha ganado el jugador 2"):alert("Seguir jugando");
-  }
   return <Test>
     <h1>3 EN RAYA 1VS1</h1>
     <div className='container'>
       {tablero.map((obj,key)=><div key={obj.id} className={obj.class} onClick={()=>pulsar(obj.id)}>{obj.value}</div>)}
     </div>
-    <div>{(turn<10)?`Turno del jugador ${player}`:""}</div>
-    <div>{(turn<10)?`Turno: ${turn}`:""}</div>
+    <div>Turno del jugador {(player)?"1":"2"}</div>
+    <div>Turno: {turn}</div>
   </Test>
 };
