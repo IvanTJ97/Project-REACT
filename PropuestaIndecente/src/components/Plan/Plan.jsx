@@ -1,4 +1,4 @@
-import { Test } from './Plan.styles';
+import {Test} from './Plan.styles';
 import {Link} from 'react-router-dom';
 import { useContext, useState,useEffect } from 'react';
 import { AppContext } from '../../application/provider';
@@ -16,10 +16,13 @@ const Plan=()=> {
       <p>Description: {obj.description}</p>
       <p>Creator: {obj.creator}</p>
       <p>Users: {obj.users}</p>
+      <p>Materials:</p>
       <ul>
-        <li>Materials:</li>
-        {obj.materials.map((obj2,key)=><li key={key}>{obj2}</li>)}
+        {obj.materials.map((obj2,key)=><li key={key} state={obj2.state}>{obj2.name}</li>)}
       </ul>
+      <p>Latitud: {obj.geo.lat}</p>
+      <p>Longitud: {obj.geo.long}</p>
+      <p>Date: {obj.geo.time}</p>
     </div>)}
     <input type="button" value="Apuntarse" />
     <br />
