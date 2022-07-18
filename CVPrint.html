@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="keywords" content="CV">
+<meta name="description" content="CV de Ivan Tejedor">
+<meta name="author" content="IvanTJ">
+<meta name="copyright" content="IvanTJ">
+<meta name="robots" content="no index">
+<meta name="robots" content="no follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/dc3159c654.js" crossorigin="anonymous"></script>
+<title>CV Ivan Tejedor</title>
+<style>
+    *{
+        border:0;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Kumbh Sans',sans-serif;
+        scroll-behavior: smooth;
+    }
+    body{
+        background-color: #2e2e2e;
+    }
+    span{
+        color:transparent;
+    }
+    .container{
+        display: grid;
+        grid-template-columns: 40% 60%;
+    }
+    header,footer{
+        grid-column: 1/3;
+        background: #2e2e2e;
+        color:#fff;
+    }
+    aside{
+        grid-column: 1/2;
+        background: #ffa800;
+    }
+    main{grid-column: 2/3;background-color: #fff;}
+    .head{display:flex;width:100%}
+    .foto{
+        width: 40%;
+        display: grid; 
+        place-items: center;
+    }
+    img{
+        object-fit: cover;
+        padding: 50px 0; 
+        border-radius: 50%;
+    }
+    .name{
+        width: 60%;
+        text-align: center; 
+        padding: 90px;
+    }
+    .name h1{font-size: 40px;}
+    h2{font-size: 30px}
+    main h2{font-size: 35px}
+    main h3{text-decoration: underline}
+    main p{font-weight: bold}
+    main ul{padding-left: 10px}
+    h3{font-size: 25px;margin-bottom: 10px}
+    aside div{
+        padding: 15px 25px 10px 25px; 
+        text-align: justify;
+    }
+    main div{
+        padding: 15px 25px 10px 15px;
+        text-align: justify;
+    }
+    .cont li{margin:15px 0 15px 5px}
+    h2{margin-bottom:13px; display: inline-block;}
+    h6{margin-bottom:10px;}
+    ul{list-style: none;}
+    aside{padding: 0;}
+    footer {padding: 5px 10px}
+    .form div{padding: 10px 15px 0 15px}
+    /*Estilo caja Idioma INICIO*/
+    .caja{
+        padding: 0;
+        display: flex;
+        flex-flow: row wrap;
+    }
+    .langBox{width: 50%; padding: 15px 15px 10px 0;}
+    .semaforo{display: flex;padding: 5px 0;}
+    .semaforo div{width: 16.66%;padding: 5px 0;}
+    i{border-radius: 50%}
+    .blue{background-color: #73b8ff}
+    .white{background-color: #fff}
+    /*Estilo caja idioma FIN*/
+    /*Estilo caja Informatica INICIO*/
+    .box{padding: 0;}
+    .box div{padding: 0;}
+    .lim{width: 100%;}
+    .barra{height: 10px;}
+    .rellenos{background: #73b8ff; height: 10px;}
+    .r100{width: 100%;}
+    .r90{width: 90%;}
+    .r75{width: 75%;}
+    .r50{width: 50%;}
+    .r33{width: 33%;}
+    /*Estilo caja Informatica FIN*/
+</style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="head">
+                <div class="foto"><img src="perfil2.png" alt="Foto Perfil"></div>
+                <div class="name">
+                    <h1>IVAN TEJEDOR FARRERAS</h1>
+                    <h2>Programador / Administrativo</h2>
+                </div>
+            </div>
+        </header>
+        <aside>
+            <div class="cont" id="cont">
+                <h2>Contacto</h2>
+                <ul>
+                    <li><i class="fa-regular fa-envelope"></i>  ivan.tejfar@gmail.com</li>
+                    <li><i class="fa-solid fa-phone"></i>  610 218 409</li>
+                    <li><i class="fa-solid fa-house"></i>  Sant Adrià de Besòs (08930) Barcelona</li>
+                </ul>
+            </div>
+            <div class="per" id="per">
+                <h2>Perfil</h2>
+                <p>Persona joven, eficiente y polivalente con muchas ganas de mostrar mi valía como trabajador, poner en práctica todos los conocimientos que he adquirido durante los estudios, y con ganas de aprender cosas nuevas, poder desarrollarme como persona y mejorar día a día.</p>
+            </div>
+            <div class="comp" id="comp">
+                <h2>Competencias</h2>
+                <ul>
+                    <li>Responsabilidad</li>
+                    <li>Adaptabilidad</li>
+                    <li>Multi-Tasking</li>
+                    <li>Autonomía</li>
+                </ul>
+            </div>
+            <div class="infor" id="infor">
+                <h2>Informática</h2>
+                <div class="box">
+                    <div class="lim">
+                        <h4>Entorno Windows</h4>
+                        <div class="barra">
+                            <div class="rellenos r100"></div>
+                        </div>
+                        <h4>Microsoft Office</h4>
+                        <div class="barra">
+                            <div class="rellenos r100"></div>
+                        </div>
+                        <h4>HTML & CSS</h4>
+                        <div class="barra">
+                            <div class="rellenos r100"></div>
+                        </div>
+                        <h4>JavaScript</h4>
+                        <div class="barra">
+                            <div class="rellenos r90"></div>
+                        </div>
+                        <h4>React</h4>
+                        <div class="barra">
+                            <div class="rellenos r90"></div>
+                        </div>
+                        <h4>React Native</h4>
+                        <div class="barra">
+                            <div class="rellenos r50"></div>
+                        </div>
+                        <h4>A3Con</h4>
+                        <div class="barra">
+                            <div class="rellenos r33"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="lang" id="lang">
+                <h2>Idiomas</h2>
+                <div class="caja">
+                    <div class="langBox">
+                        <h4>Castellano</h4>
+                        <div class="semaforo">
+                            <div><i class="fa-regular fa-circle blue"></i></div>
+                            <div><i class="fa-regular fa-circle blue"></i></div>
+                            <div><i class="fa-regular fa-circle blue"></i></div>
+                            <div><i class="fa-regular fa-circle blue"></i></div>
+                            <div><i class="fa-regular fa-circle blue"></i></div>
+                            <div><i class="fa-regular fa-circle blue"></i></div>
+                        </div>
+                    </div>
+                    <div class="langBox">
+                        <h4>Catalán</h4>
+                        <div class="semaforo">
+                            <div><i class="fa-regular fa-circle blue"></i></div>
+                            <div><i class="fa-regular fa-circle blue"></i></div>
+                            <div><i class="fa-regular fa-circle blue"></i></div>
+                            <div><i class="fa-regular fa-circle blue"></i></div>
+                            <div><i class="fa-regular fa-circle blue"></i></div>
+                            <div><i class="fa-regular fa-circle blue"></i></div>
+                        </div>
+                    </div>
+                    <div class="langBox">
+                        <h4>Inglés</h4>
+                        <div class="semaforo">
+                            <div><i class="fa-regular fa-circle blue"></i></div>
+                            <div><i class="fa-regular fa-circle blue"></i></div>
+                            <div><i class="fa-regular fa-circle blue"></i></div>
+                            <div><i class="fa-regular fa-circle blue"></i></div>
+                            <div><i class="fa-regular fa-circle white"></i></div>
+                            <div><i class="fa-regular fa-circle white"></i></div>
+                        </div>
+                    </div>
+                    <div class="langBox">
+                        <h4>Francés</h4>
+                        <div class="semaforo">
+                            <div><i class="fa-regular fa-circle blue"></i></div>
+                            <div><i class="fa-regular fa-circle blue"></i></div>
+                            <div><i class="fa-regular fa-circle white"></i></div>
+                            <div><i class="fa-regular fa-circle white"></i></div>
+                            <div><i class="fa-regular fa-circle white"></i></div>
+                            <div><i class="fa-regular fa-circle white"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="data" id="data">
+                <h2>Datos de interés</h2>
+                <ul>
+                    <li>Permiso de conducir B</li>
+                    <li>Disponibilidad total e inmediata</li>
+                </ul>
+            </div>
+        </aside>
+        <main>
+            <div class="exp" id="exp">
+                <h2>Experiencia Laboral</h2>
+                <div class="oliver">
+                    <h3>Oliver+Batlle</h3>
+                    <h5>Administrativo</h5>
+                    <h6>2020</h6>
+                    <p>Tareas realizadas:</p>
+                    <ul>
+                        <li>Revisión y expedición de la documentación derivada de las exportaciones e impotaciones (B/L, CMR,
+                            DUAs,...) e Intrastat</li>
+                        <li>Seguimiento y preparación de envíos tanto intracomunitarios como exportaciones internacionales</li>
+                        <li>Realización y punteo de facturas para clientes internacionales</li>
+                    </ul>
+                </div>
+                <div class="valmat">
+                    <h3>Valmat / Petit Indi</h3>
+                    <h5>Administrativo</h5>
+                    <h6>2018-2019</h6>
+                    <p>Tareas realizadas:</p>
+                    <ul>
+                        <li>Control de horarios de los trabajadores</li>
+                        <li>Cálculo de escandallos y costes de producción</li>
+                        <li>Facturación a clientes</li>
+                        <li>Preparación de envíos y control de stock</li>
+                        <li>Preparación y expedición de documentación necesaria para gestoría.</li>
+                        <li>Revisión de documentos oficiales (modelo 303, 115...)</li>
+                    </ul>
+                </div>
+                <div class="motor">
+                    <h3>Motor Repris</h3>
+                    <h5>Auxiliar Administrativo</h5>
+                    <h6>2017</h6>
+                    <p>Tareas realizadas:</p>
+                    <ul>
+                        <li>Archivo y punteo de facturas</li>
+                        <li>Recepción de clientes</li>
+                        <li>Contacto con clientes</li>
+                        <li>Control horario de trabajadores</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="form" id="form">
+                <h2>Formación Académica</h2>
+                <div class="pro">
+                    <h3>Curso de Formación Profesional de Programación de Aplicaciones Móviles (No Reglado) - 840h.</h3>
+                    <h5>Academia Aspasia, Barcelona</h5>
+                    <h6>2022</h6>
+                </div>
+                <div class="com">
+                    <h3>Título de Grado Superior en Comercio Internacional</h3>
+                    <h5>Institut Badalonès, Badalona</h5>
+                    <h6>2018-2020</h6>
+                </div>
+                <div class="adm">
+                    <h3>Título de Grado Superior en Administración y Finanzas</h3>
+                    <h5>Institut Badalonès, Badalona</h5>
+                    <h6>2017-2019</h6>
+                </div>
+                <div class="fis">
+                    <h3>Grado en Física (no finalizado)</h3>
+                    <h5>Universitat de Barcelona (UB)</h5>
+                    <h6>2015-2017</h6>
+                </div>
+                <div class="bach">
+                    <h3>Título de Bachillerato (rama Tecno-Científica)</h3>
+                    <h5>Instituto Sant Gabriel, Sant Adrià de Besòs</h5>
+                    <h6>2013-2015</h6>
+                </div>
+                <div class="eso">
+                    <h3>Título de la ESO</h3>
+                    <h5>Colegio Amor de Dios, Sant Adrià de Besòs</h5>
+                    <h6>2000-2013</h6>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <h5>https://github.com/IvanTJ97</h5>
+        </footer>
+        <div>
+            <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi earum dolorum officiis iusto voluptatibus, sed veritatis est voluptatem nihil vel adipisci tempora quaerat tempore assumenda eius a ipsa dolorem ipsum, quas totam laboriosam minus aspernatur animi consectetur. Perspiciatis earum sunt molestias eum necessitatibus non odit provident commodi asperiores sequi consequuntur quos quam eos iure aspernatur, dicta velit nihil similique voluptates qui quasi fugit! Mollitia minima consequatur quis velit repellat doloremque nemo sit adipisci debitis error obcaecati expedita corporis, consequuntur odit ab accusantium molestias voluptas? Quae facilis doloremque perferendis veritatis veniam aperiam amet cumque exercitationem, sapiente eaque, molestias nostrum quam itaque in saepe quos perspiciatis quaerat sunt explicabo. Molestiae obcaecati unde suscipit veritatis nobis. Itaque consectetur unde reprehenderit vero ratione similique nihil, in et pariatur eius ipsam fugiat asperiores debitis, labore odit minima, suscipit praesentium quia quasi repellat. Earum, minus ad. Tenetur saepe dolorum, inventore cupiditate, esse ipsum a explicabo porro rerum ratione necessitatibus repellendus expedita beatae doloremque veniam voluptas ad amet delectus fugiat? Impedit autem repudiandae modi quasi eos provident esse veritatis, suscipit, delectus optio quisquam accusantium placeat praesentium hic ullam amet blanditiis iure facilis nulla deleniti animi. Reiciendis placeat laudantium excepturi similique vitae, quis veniam facere tempora ratione officia.</span>
+        </div>
+    </div>
+</body>
+</html>
