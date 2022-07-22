@@ -8,7 +8,7 @@ const Jogo = (props) =>{
   const {fase}=useContext(AppContext);
   const [fas,setFas]=fase;
   return <div className="JogoWrapper">
-    {(fas===1)?<Fase1/>:(fas===2)?<Fase2/>:<Fase3/>}
+    {(fas===1)?<Fase1/>:(fas===2)?<><Fase1/><Fase2/></>:<Fase3/>}
   </div>
 };
 export default Jogo;
