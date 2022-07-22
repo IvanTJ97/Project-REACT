@@ -3,14 +3,18 @@ import Jogo from './components/JogoOca/'
 import {useState} from 'react';
 const App=()=>{
   const [select,setSelect]=useState(null);
+  const [players,setPlayers]=useState(null);
   if(select===null)return <>
-    <h2>Seleccione jugadores</h2> <br />
-    <button onClick={()=>setSelect(1)}>Jugar 1</button> <br />
-    <button onClick={()=>setSelect(2)}>Jugar 2</button> <br />
-    <button onClick={()=>setSelect(3)}>Jugar 3</button> <br />
-    <button onClick={()=>setSelect(4)}>Jugar 4</button> <br />
-    <button onClick={()=>setSelect(5)}>Jugar 5</button> <br />
-    <button onClick={()=>setSelect(6)}>Jugar 6</button>
+    <h2>Seleccione jugadores: </h2> <br />
+    <select name="players" id="players" onClick={e=>setPlayers(e.target.value)}>
+      <option value="1">1 Jugador</option>
+      <option value="2">2 Jugadores</option>
+      <option value="3">3 Jugadores</option>
+      <option value="4">4 Jugadores</option>
+      <option value="5">5 Jugadores</option>
+      <option value="6">6 Jugadores</option>
+    </select>
+    <button onClick={()=>setSelect(players)}>JUGAR</button>
   </>
   return <div>
     <Jogo select={select}/>

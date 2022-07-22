@@ -34,16 +34,9 @@ const Jogo=({select})=>{
     while(true){
       (P===select-1)?P=0:P++;
       if(casillas[P]!==62){setJ(P);break};
-      ganar();
+      if(casillas.slice(0,select).every(obj=>obj===62)){alert("Felicidades, habéis sobrevivido");break};
     }
-  }
-  const ganar=()=>{
-    if(casillas[0]===62){
-      let S=casillas.filter(obj=>obj!==62);
-      if(S.length===0)window.location.reload(false);
-    };
-    //if(casillas[0]===62&&casillas[0]===casillas[1]&&casillas[0]===casillas[2]&&casillas[0]===casillas[3]&&casillas[0]===casillas[4]&&casillas[0]===casillas[5])window.location.reload(false);
-  }
+  };
   return <>
     <Test>
       <div className="tablero">
@@ -118,6 +111,7 @@ const Jogo=({select})=>{
       <input type="button" value="+" className='btn' onClick={tirar}/><br />
       <h4>Turno del jugador {J+1}</h4>
       <p>{info}</p>
+      <button onClick={()=>window.location.reload(false)}>Reload</button>
     </Res>
   </>
 };
