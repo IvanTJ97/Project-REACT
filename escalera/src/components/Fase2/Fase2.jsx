@@ -36,7 +36,7 @@ const Fase2 = (props) =>{
       <div className='C10'><Carta palo={pir[9].palo} numero={pir[9].numero}/></div>
       <div className='C11'><Carta palo={pir[10].palo} numero={pir[10].numero}/></div>
     </Test>
-    <button onClick={()=>setFas(3)}>Ir a la fase 3</button>
+    <button onClick={()=>setFas(3)} style={{width:"100%",padding:"20px"}}>Ir a la fase 3</button>
   </Container>
 };
 
