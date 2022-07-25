@@ -45,7 +45,7 @@ const Fase3 = () =>{
   };
   const style={
     textAlign:"center",
-    padding:"20px",
+    padding:"20px 0",
     width:"100%"
   }
   return <>
