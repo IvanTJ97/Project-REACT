@@ -11,16 +11,13 @@ const App=()=>{
     color:"#fff"
   };
   if(select===null)return <>
-    <h2>Seleccione jugadores: </h2> <br />
-    <select name="players" id="players" onClick={e=>setPlayers(e.target.value)} style={style}>
-      <option value="1">1 Jugador</option>
-      <option value="2">2 Jugadores</option>
-      <option value="3">3 Jugadores</option>
-      <option value="4">4 Jugadores</option>
-      <option value="5">5 Jugadores</option>
-      <option value="6">6 Jugadores</option>
-    </select>
-    <button onClick={()=>setSelect(players)} style={style}>JUGAR</button>
+    <h2>Seleccione el número de jugadores: </h2> <br />
+    <button onClick={()=>setSelect(1)} style={style}>1 JUGADOR</button>
+    <button onClick={()=>setSelect(2)} style={style}>2 JUGADORES</button>
+    <button onClick={()=>setSelect(3)} style={style}>3 JUGADORES</button>
+    <button onClick={()=>setSelect(4)} style={style}>4 JUGADORES</button>
+    <button onClick={()=>setSelect(5)} style={style}>5 JUGADORES</button>
+    <button onClick={()=>setSelect(6)} style={style}>6 JUGADORES</button>
   </>
   return <div>
     <Jogo select={select}/>
