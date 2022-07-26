@@ -40,6 +40,12 @@ export const Res=styled.div`
         top:0;
         left:0;
         width:5%;
-        height:100%;
+        height:109%;
+        background:#000;
+        color:#fff;
+    }
+    button{
+        padding:15px;
+        background:#ccc;
     }
 `
