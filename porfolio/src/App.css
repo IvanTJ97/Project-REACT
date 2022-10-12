@@ -7,24 +7,22 @@
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',sans-serif;
 }
-header,ul,.head{display: flex;}
-nav,.imagen,.title{width: 50%;}
-ul{list-style: none;}
-a{text-decoration: none;color:#000;}
-li{
-    flex-grow: 1;
-    text-align: center;
-    padding: 2.67% 0;
-}
-li>a:hover{
-    border-bottom: 2px solid #000;
-}
-/*Titulo del nav*/
+header,ul,.head{display:flex}
+nav,.imagen,.title{width:50%}
 #TJ97{
     width:50%;
-    padding: 1% 0;
-    padding-left: 10%;
+    text-align:center;
+    padding-top:15px;
 }
+ul{list-style:none}
+a{text-decoration:none;color:#000}
+li{
+    flex:1;
+    text-align:center;
+    padding-top:25px;
+}
+li>a:hover{border-bottom: 2px solid #000}
+header{margin-bottom:35px}
 .imagen{
     display: grid;
     place-items: center;
@@ -34,6 +32,9 @@ li>a:hover{
     border-radius: 50%;
     width: 150px;
     height: 150px;
+}
+.title{
+    text-align: center;
 }
 .head,.projects,.about,.contact{width: 90%;margin: auto;}
 .projects{
