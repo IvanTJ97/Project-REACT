@@ -43,4 +43,7 @@ export const Style = styled.div`
     span,input[type="button"]:hover{
         cursor: pointer;
     }
+    input[type="button"]:hover{
+        background-color:#F0C;
+    }
 `;
