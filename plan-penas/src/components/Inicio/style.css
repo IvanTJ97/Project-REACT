@@ -1,0 +1,14 @@
+.Container{
+    display: grid;
+    grid-template-columns:repeat(5,1fr);
+    width:75%;
+}
+.Container>div{
+    border:1px solid #000;
+    display: grid;
+    place-items: center;
+}
+.Headers{
+    font-weight:bold;
+    font-size:18px;
+}
