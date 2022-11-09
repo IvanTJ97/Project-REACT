@@ -2,7 +2,6 @@ import {useState} from 'react';
 import Select from 'react-select';
 import CreatableSelect from 'react-select/creatable';
 import {createMember,getMembers} from '../../app/api';
-import "./style.css";
 import {objectCreator,readUploadFile,exportFile} from '../excel';
 const App=()=>{
   const [c,setC]=useState(false);
@@ -19,11 +18,15 @@ const App=()=>{
     setData(result);
     alert("Cargado con éxito");
   };
-  const funcion=async()=>{
+  const getServerMembers=async()=>{
     const D=await getMembers("vhmdtZrZMovvkYkzhchn");
     setData(D);
   };
   const addMembers=()=>data.forEach(obj=>createMember("vhmdtZrZMovvkYkzhchn",obj));
+  const eraseMember=input=>{
+    data.splice(input,1);
+    setC(!c);
+  };
   const addLine=()=>{
     if(nameIn!==null&&nameIn.length>0){
       const S=objectCreator(nameIn,cenaIn,tipoIn,cantidadIn);
@@ -32,48 +35,51 @@ const App=()=>{
     }
   };
   return <div>
-    <div className='Container'>
-      <div><p className='Headers'>Nombre</p></div>
-      <div><p className='Headers'>Cena</p></div>
-      <div><p className='Headers'>Bebida</p></div>
-      <div><p className='Headers'>Cantidad</p></div>
+    <div className='grid grid-cols-5 text-center'>
+      <div><p className='font-bold text-xl border border-black'>Nombre</p></div>
+      <div><p className='font-bold text-xl border border-black'>Cena</p></div>
+      <div><p className='font-bold text-xl border border-black'>Bebida</p></div>
+      <div><p className='font-bold text-xl border border-black'>Cantidad</p></div>
     </div>
-    {data.map((obj,key)=><div key={key} className="Container">
+    {data.map((obj,key)=><div key={key} className="grid grid-cols-5 text-center">
       <div><p>{obj.name}</p></div>
       <div><p>{obj.dinner?"si":"no"}</p></div>
       <div><p>{obj.type}</p></div>
       <div><p>{obj.quantity}</p></div>
+      <div className='text-left'><input type="button" value="X" onClick={()=>eraseMember(key)}/></div>
     </div>)}
-    <div className='Container'>
-      <div style={{placeItems:"inherit",border:0}}>
-        <input type="text" style={{textAlign:"center"}} onChange={e=>setNameIn(e.target.value)}/>
+    <div className='grid grid-cols-5'>
+      <div className='grid place-items-center'>
+        <input type="text" style={{textAlign:"center"}} onChange={e=>setNameIn(e.target.value)} placeholder="Nombre"/>
       </div>
-      <div style={{placeItems:"inherit",border:0}}>
-        <Select options={[{value:"Si",label:"Si"},{value:"No",label:"No"}]} onChange={e=>setCenaIn(e.value)} placeholder={<div>Type to search</div>} />
+      <div className=''>
+        <Select options={[{value:"Si",label:"Si"},{value:"No",label:"No"}]} onChange={e=>setCenaIn(e.value)} placeholder={<div>Cena</div>}/>
       </div>
-      <div style={{placeItems:"inherit",border:0}}>
-        <CreatableSelect isClearable options={[{value:"Ron",label:"Ron"},{value:"Ginebra",label:"Ginebra"},{value:"Vodka",label:"Vodka"},{value:"Whisky",label:"Whisky"},{value:"No",label:"No"}]} onChange={e=>setTipoIn(e.value)}/>
+      <div className=''>
+        <CreatableSelect isClearable options={[{value:"Ron",label:"Ron"},{value:"Ginebra",label:"Ginebra"},{value:"Vodka",label:"Vodka"},{value:"Whisky",label:"Whisky"},{value:"No",label:"No"}]} onChange={e=>setTipoIn(e.value)} placeholder={<div>Tipo Bebida</div>}/>
       </div>
-      <div style={{placeItems:"inherit",border:0}}>
-        <CreatableSelect isClearable options={[{value:"Mucho",label:"Mucho"},{value:"Medio",label:"Medio"},{value:"Poco",label: "Poco"},{value:"No",label:"No"}]} onChange={e=>setCantidadIn(e.value)}/>
+      <div className=''>
+        <CreatableSelect isClearable options={[{value:"Mucho",label:"Mucho"},{value:"Medio",label:"Medio"},{value:"Poco",label: "Poco"},{value:"No",label:"No"}]} onChange={e=>setCantidadIn(e.value)} placeholder={<div>Cantidad</div>}/>
       </div>
       <div style={{border:0}}>
         <input type="button" value="+" onClick={addLine}/>
       </div>
     </div>
-    <form>
+    <form className='text-center mt-5'>
       <input
         type="file"
         onChange={(e)=>{read(e)}}
       />
+      <br />
+      <p className='mt-5'>Número de noches:</p>
+      <input type="number" defaultValue={1} min={1} max={31} onChange={e=>setNights(e.target.value)} className="w-10"/>
+      <br />
+      <input type="button" value="Crear excel" onClick={()=>{exportFile(data,nights)}} className="bg-black text-white w-52 p-3 rounded-xl hover:cursor-pointer hover:bg-slate-500 mt-5"/>
+      <br />
+      <input type="button" value="Añadir Miembros" onClick={addMembers} className="bg-black text-white w-52 p-3 rounded-xl hover:cursor-pointer hover:bg-slate-500 mt-5"/>
+      <br />
+      <input type="button" value="Recuperar Miembros" onClick={getServerMembers} className="bg-black text-white w-52 p-3 rounded-xl hover:cursor-pointer hover:bg-slate-500 mt-5"/>
     </form>
-    <input type="button" value="Añadir Miembros" onClick={addMembers}/>
-    <br />
-    <input type="button" value="Recuperar Miembros" onClick={funcion}/>
-    <br />
-    <input type="number" placeholder='Numero de Noches' min={1} onChange={e=>setNights(e.target.value)}/>
-    <br />
-    <input type="button" value="Crear excel" onClick={()=>{exportFile(data,nights)}}/>
   </div>
 };
 export default App;
